@@ -1,0 +1,97 @@
+<div id="header">
+	<h1> 
+		¡Ayuda! ¡No me entero!
+	</h1>
+</div>
+
+<div class="big">
+<h2> ¿De qué va esta aplicación? </h2>
+<p>
+	Sirve para proponer, elegir y organizar jornadas de cursos.
+</p>
+
+<h2> ¿Quién la ha hecho? </h2>
+<p>
+	Alguien con ganas de aprender Ruby On Rails 2.0
+</p>
+
+<h2> ¿Por dónde empiezo? </h2>
+<p>
+	Echando un ojo a las <%= link_to "jornadas", :controller => "courses", :action => "index" %>. 
+	Si hay alguna jornada abierta, puedes proponer algún curso o votar los que se hayan propuesto. 
+	El resto de jornadas estarán cerradas, pero podrás acceder al material que los ponentes dejan disponible e
+	inspirarte para dar alguna charla la próxima vez :)
+</p>
+
+<h2> ¿Propuestas? ¿Votaciones? ¿Qué es eso? </h2>
+<p>
+	Las jornadas se organizan en varias fases:
+	<ul>
+		<li> <span style="color:#0066ff">Fase 1: Propuestas</span>. La gente propone las charlas que quiere dar o que les gustaría que alguien diera.</li>
+		<li> <span style="color:#ff6600">Fase 2: Votaciones</span>. La gente vota las propuestas que más les gustan. </li>
+		<li> <span style="color:#00dd66">Fase 3: Organizando</span>. Los organizadores cogen las charlas más votadas y organizan el calendario, buscan ponentes, etc.  </li>
+		<li> <span style="color:#dd0000">Fase 4: Cerradas</span>. Las charlas se dan y pasan a la Historia. </li>
+	</ul>
+</p>
+
+<h2> Visito el calendario provisional de unas jornadas y me sale hecho un churro. </h2>
+<p>
+	Puede ser :)
+</p>
+
+<h2> Algo no funciona bien. </h2>
+<p>
+	¿Has hecho algo mal?
+</p>
+
+<h2> No. </h2>
+<p>
+	¿Seguro?
+</p>
+
+<h2> Si. </h2>
+<p>
+	¿Seguro seguro seguro?
+</p>
+
+<h2> Si. </h2>
+<p>
+	Entonces manda un mail a <span> info <span> arroba </span> gul punto </span> es y cuenta qué has roto.
+</p>
+
+<h2> Veo un enlace para acceder como usuario, pero no veo dónde apuntarme </h2>
+<p>
+	Entonces no necesitas apuntarte
+</p>
+
+<h2> Pero quiero darme de alta como usuario </h2>
+<p>
+	¿Seguro?
+</p>
+
+<h2> Si. </h2>
+<p>
+	¿Seguro seguro seguro?
+</p>
+
+<h2> Si. </h2>
+<p>
+	Entonces pulsa <a href="http://myspace.com"> aquí </a>
+</p>
+
+<h2> ¿Crees que esta ayuda es suficiente? </h2>
+<p> 
+	Ni de coña, pero no me apetece escribir más.
+</p>
+</div>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+<p>
+	Esta ayuda está disponible en 
+	<%= link_to "lenguaje sms", :controller => "users", :action => "help-sms" %>
+	y en 
+	<%= link_to "HOYGAN", :controller => "users", :action => "help-hoygan" %>	
+	para que los ceporros, latin kings, yenis, canis, etc puedan entenderla. 
+</p>
+

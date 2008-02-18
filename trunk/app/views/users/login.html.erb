@@ -1,0 +1,27 @@
+<div id="header">
+	<h1> 
+		Acceder
+	</h1>
+</div>
+
+<% form_for :user, nil, :url => "/users/dologin" do |f| %>
+  <p>
+	<table>
+		<tbody>
+			<tr>
+				<td> Tu nombre: </td>
+				<td> <input type="text" name="username" /> </td>
+			</tr>
+			<tr>
+				<td> Clave: </td>
+				<td> <input type="password" name="password" /> </td>
+			</tr>
+			<tr>
+				<td> </td>
+				<td> <%= f.submit "¡Entrar! "%> </td>
+			</tr>
+		</tbody>
+	</table>
+  </p>
+
+<% end %>

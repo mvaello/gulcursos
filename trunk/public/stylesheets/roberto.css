@@ -1,0 +1,329 @@
+body
+{
+	font-family:Verdana;
+	font-size:12px;
+	font-weight:normal;
+	background: #fff;
+	margin: 0 auto;
+	padding:0;
+}
+
+.course
+{
+	margin-left: auto;
+	margin-right: auto;
+	width:50em;
+	padding-left:3em;
+	margin-top:1em;
+	border:2px solid #ffff88;
+	-moz-border-radius:3em;
+}
+
+.course-highlighted
+{
+	margin-left: auto;
+	margin-right: auto;
+	width:50em;
+	padding-left:2em;
+	border:1em solid #ff6600;
+	-moz-border-radius:3em; 
+	margin-top:1em;
+}
+
+.course .description, .course-highlighted .description
+{
+	color:#ff8800;
+	margin-top:0;
+}
+
+.pupils
+{
+	margin-left: auto;
+	margin-right: auto;
+	width:60em;
+	padding-left:3em;
+	padding-right:1em;
+	margin-top:1em;
+	border:2px solid #ff6600;
+	-moz-border-radius:2em;
+	padding-bottom:1em;
+}
+
+.pupiltable td
+{
+	border-bottom: 2px solid #ff6600;
+}
+
+.pupiltable th
+{
+	background: #ff6600;
+}
+
+.lecture
+{
+	margin-left: auto;
+	margin-right: auto;
+	width:60em;
+	padding-left:3em;
+	padding-right:1em;
+	margin-top:1em;
+	border:2px solid #ffff88;
+	-moz-border-radius:2em;
+}
+
+.lecture .author
+{
+	color:#ff8800;
+	margin-top:0;
+}
+
+.lecture .description
+{
+	color:#666;
+	margin-top:0;
+}
+
+.lecture .mark
+{
+	color:#ff8800;
+	float:right;
+	margin-left:auto;
+	margin-right:0em;
+	margin-top:10px;
+	height:2em;
+	font-size:200%;
+	text-align: center;
+}
+
+.lecture .content
+{
+	border-right:1px solid #ffff88;
+	padding-right:2em;
+	width:48em;
+}
+
+.phasedescription
+{
+	color: #ff8800;
+	font-size: 20px;
+	text-align:center;	
+}
+
+.centered
+{
+	clear:both;
+	text-align:center;
+}
+
+h1
+{
+	font-size:20px;
+	font-weight:normal;
+	width:100%;
+	color: #000;
+	margin-bottom:0;
+	margin-top:0;
+	color: #ff6600;
+}
+
+h2
+{
+	font-size:20px;
+	font-weight:normal;
+	width:100%;
+	margin-bottom:0;
+	margin-top:0.5em;
+	color: #ff6600;
+}
+
+h3
+{
+	font-size:12px;
+	font-weight:normal;
+	width:100%;
+	margin-bottom:0;
+	margin-top:0;
+}
+
+img
+{
+	border-width:0px
+}
+
+a
+{
+	text-decoration:underline;
+	color: #ff4400;
+}
+
+a:visited
+{
+	text-decoration:underline;
+	color:#ff4400;
+}
+
+a:hover
+{
+	text-decoration:none;
+	color:#fff;
+	background:#ff4400;
+}
+
+.senkiu
+{
+	font-size:12px;
+}
+
+#footer
+{
+	font-size:9px;
+	padding-left:1em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	margin-top:10em;
+	color:#ff6600;
+	text-align:right;
+	padding-right:2em;
+}
+
+#header
+{
+	padding-left:1em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	background: #ff8800;
+}
+
+#header h1
+{
+	color: #fff;
+}
+
+#header a, #header a:visited
+{
+	text-decoration:underline;
+	color: #fff;	
+}
+
+#header a:hover
+{
+	text-decoration:none;
+	background: #fff;	
+	color: #ff8800;
+}
+
+.errorHeader
+{
+	padding-top:5px;
+	padding-bottom:5px;
+	background: #dd4237;
+	color: #fff;
+}
+
+.error
+{
+	font-size: 15px;
+	color: #dd4237;
+}
+
+.notice
+{
+	color: #060606;
+	background: #88f93e;
+	font-size: 15px;
+	text-align: center;
+	margin-top:0;
+}
+
+input, textarea, select
+{
+	font-size:15px;
+	background:#fff;
+	border: 1px solid #ff6600;
+}
+
+#userbox 
+{
+	float:right;
+	text-align:left;
+	background: #ff8800;
+	color: white;
+	margin-right:.5em;
+	margin-top:1em;
+}
+
+#userbox a, #userbox a.visited
+{
+	color:white;	
+}
+
+.calendar
+{
+	margin-left:1em;
+	margin-right:1em;
+	border: 2px solid #ff6600;
+	padding:0;
+	border-spacing:0;
+	border-collapse:collapse;
+	font-size:15px;
+}
+
+.calendar th
+{
+	font-weight:normal;
+	width:10%;
+	padding-top:1em;
+	padding-bottom:1em;
+	text-align:center;
+	color:black;
+	background: #ffff88;
+}
+
+.calendar td
+{
+	border: 2px solid #ff6600;
+	height:10px;
+	padding:0;
+	text-align:left;
+	vertical-align:top;
+	padding-bottom:1em;
+}
+
+.subcalendar
+{
+	border-spacing:0;
+	border-collapse: collapse;
+}
+
+.subcalendar td
+{
+	border:0;
+}
+
+.subcalendar th
+{
+	border:0;
+	color: #ff6600;
+	font-size:20px;
+}
+
+.calendardoesnotinclude, .calendardoesnotinclude ul
+{
+	color: #ff8800;
+	font-size: 20px;
+	text-align:center;	
+	list-style-type:none;
+}
+
+.big
+{
+	font-size: 15px;	
+}
+
+.selectstyle
+{
+	border:none;
+	font-size:10px;
+	background:#ff8800;
+	color:white;
+}

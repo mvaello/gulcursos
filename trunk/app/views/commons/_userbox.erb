@@ -1,0 +1,13 @@
+<div id="userbox">
+	<select onChange="location=this.options[this.selectedIndex].value" class="selectstyle">
+		<option value="" selected>Estilo...</option>
+		<option value="/users/style/style"> Web 2.0 (Firefox) </option>
+		<option value="/users/style/gul"> GUL </option>
+		<option value="/users/style/roberto"> Roberto (Firefox) </option>
+		<option value="/users/style/no"> Plano </option>
+	</select>
+	<%= link_to "¡Ayuda!", :controller => "users", :action => "help" %>
+	| 
+	<%= link_to "Acceder...", :controller => "users", :action => "login" unless session[:loginValidated] %>
+	<%= link_to "Salir", :controller => "users", :action => "logout" if session[:loginValidated] %>
+</div>

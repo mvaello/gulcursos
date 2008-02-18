@@ -1,0 +1,42 @@
+
+<div id="header">
+<h1>Jornadas técnicas</h1>
+</div>
+
+<p class="notice"><%= flash[:notice] %> </p>
+
+<p class="phasedescription">
+<%= link_to '[ Nuevo curso ]', new_course_path if @root %>
+</p>
+
+<% for course in @courses
+
+if course.phase == Course::PHASE_CALENDAR
+  nLectures = course.lecture.find_all { |lecture| lecture.rejected == 0 }.size
+else
+  nLectures = course.lecture.count
+end  
+%>
+
+	<div class="<%=course.phase<3&&course.title!="Playground"?"course-highlighted":"course" %>" onClick="location='/courses/<%=course.id%>'">
+		<h2> <%= link_to course.title, :action => "show", :id => course.id %> </h2>
+		<p class="description"> 
+			<%= course.description %>
+			<br /> 
+			<%= nLectures %> 
+			cursos 
+			<%= ['propuestos hasta ahora', 'a elegir', 'elegidos', 'dados'][course.phase] %>
+		</p>
+
+		<img alt="" src="/images/phase<%=course.phase+1%>.png" />
+		
+		<p>
+<% if (@root) %>
+		    <%= link_to '[ Editar ]', edit_course_path(course) %>
+<% end %>
+		</p>
+	</div>
+<% end %>
+
+
+<br />

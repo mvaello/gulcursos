@@ -1,0 +1,101 @@
+
+<div id="header">
+	<h1> 
+	<%= link_to "Jornadas técnicas", :controller => "courses" %> > 
+	<%= link_to @course.title, :controller => "courses/#{@course.id}" %> > 
+	Ganadores
+	</h1>
+</div>
+
+<p class="notice"><%= flash[:notice] %> </p>
+
+<img alt="" src="/images/phase<%=@course.phase+1%>.png" />
+
+<% form_for :course, nil, :url => "/courses/batch" do |f| %>
+<table>
+	<tbody>
+		<tr>
+			<th colspan="5">
+				Charlas ganadoras
+			</th>
+		</tr>
+
+		<tr>
+			<th></th>
+			<th>Aceptar</th>
+			<th>Rechazar</th>
+			<th>Fijar aula </th>
+			<th>Título</th>
+			<th>Votos</th>
+			<th>Asistentes</th>
+		</tr>
+	<% i = 1 %>
+	<% for lecture in @winningLectures %>
+		<tr>
+			<td>
+				<%= i %>
+			</td>
+			<td>
+				<% if lecture.rejected > 0%>
+					<input type="checkbox" name="check_accept_<%=lecture.id%>"/>
+				<% end %>
+			</td>
+			<td>
+				<% if lecture.rejected == 0%>
+					<input type="checkbox" name="check_reject_<%=lecture.id%>"/>
+				<% end %>
+			</td>
+			<td>
+				<input type="checkbox" name="check_room_<%=lecture.id%>"/>
+			</td>
+			<td>
+				<%= lecture.title %>				
+			</td>
+			<td>
+				<%= lecture.vote.count %>				
+			</td>
+			<td>				
+				<%= lecture.pupil.count %>
+			</td>
+		</tr>
+		<% i = i + 1 %>
+	<% end %>
+
+	<tr>
+		<th colspan="5">
+			Charlas patrocinadas
+		</th>
+	</tr>
+	<% for lecture in @stuckLectures %>
+		<tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+				</td>
+				<td>
+				</td>
+				<td>
+					<input type="checkbox" name="check_room_<%=lecture.id%>"/>
+				</td>
+				<td>
+					<%= lecture.title %>				
+				</td>
+				<td>
+					<%= lecture.vote.count %>				
+				</td>
+				<td>				
+					<%= lecture.pupil.count %>
+				</td>
+			</tr>
+		</tr>		
+	<% end %>
+
+	</tbody>
+</table>
+
+Aula:<input name="batch_room" />
+
+<%= f.submit "OK" %>
+
+<% end %>

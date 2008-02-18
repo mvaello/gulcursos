@@ -1,0 +1,259 @@
+<?php 
+/*
+ * No estaria de mas quitar los tronchos de html y hacerf funcioncitas
+ */
+?>
+
+<?php /* print_r($lecture); echo "IP = $clientip"; */ ?>
+
+<?php 
+	$lecturetitle = $lecture[0]['Lecture']['title'];
+	echo "<h1> $lecturetitle </h1>";
+	echo "
+		<div id='shortdescription'>
+			{$lecture[0]['Lecture']['briefdescription']}
+		</div>
+	";
+
+	$nVotes = count($lecture[0]['Vote']);
+	
+	$totalMark = 0;
+	$canVote = 1;	
+	foreach($lecture[0]['Vote'] as $vote)
+	{
+		$totalMark += $vote['mark'];
+		if ($vote['ip'] == $clientip)
+			$canVote = 0;
+	}
+
+	$markClass = "zero";
+	if ($totalMark > 0)
+		$markClass = "good";
+	if ($totalMark < 0)
+		$markClass = "bad";
+
+	echo "
+	<div id='description'> 
+	  <div id='mark'> <div class='title'>Puntuaci&oacute;n</div><div class='$markClass'> $totalMark </div></div>
+	{$lecture[0]['Lecture']['description']}
+	
+		<ul>
+			<li> <strong> Ponente: </strong>{$lecture[0]['Lecture']['teacher']}	</li>
+			<li> <strong> Fecha: </strong>{$lecture[0]['Lecture']['date']}	</li>
+			<li> <strong> Hora de inicio: </strong>".substr($lecture[0]['Lecture']['startingtime'],0,5)."	</li>
+			<li> <strong> Hora de fin: </strong>".substr($lecture[0]['Lecture']['endingtime'],0,5)."	</li>
+			<li> <strong> Aula: </strong>{$lecture[0]['Lecture']['room']}	</li>
+			<li> <strong> Conocimientos previos: </strong>{$lecture[0]['Lecture']['suggestedskills']}	</li>
+			<li> <strong> Nivel (1 = b&aacute;sico, 5 = dif&iacute;cil): </strong>{$lecture[0]['Lecture']['level']}	</li>
+			<li> <strong> Referencias: </strong> {$html->link($lecture[0]['Lecture']['referencesurl'])}	</li>
+			<li> <strong> Asistido por: </strong> {$lecture[0]['Lecture']['assistedby']}	</li>
+		</ul>		
+	</div>
+	";
+?>
+
+<?php		
+	echo $html->link("Volver a las jornadas", "/courses/view/{$lecture[0]['Course']['id']}");
+	if ($session->check("User"))
+	{
+		echo " | ";
+		echo $html->link("Editar este curso", "/lectures/edit/{$lecture[0]['Lecture']['id']}");		
+	}
+?>
+
+<?php
+
+	$username="pecador";
+	$useremail="";
+
+	if ($session->check("User"))
+	{
+		$user = $session->read('User');		
+		$username = $user['username'];
+		$useremail = $user['email'];
+	}
+
+	$hoy = date("Y-m-d", mktime());
+	$fechacurso = $lecture[0]['Lecture']['date'];		
+		
+	if (($hoy < $fechacurso) || ($fechacurso == ""))
+	{
+		$nVotes = count($lecture[0]['Vote']);
+		$nPupil = count($lecture[0]['Pupil']);
+		
+		$pupils = "";
+		$i = 0;
+		if ($session->check("User") && $nPupil > 0)
+		{
+			$pupils = "<table><tbody><tr class='head'><th>Nombre</th><th>e-mail</th><th>¿Quiere certificado?</th></tr>";
+			foreach($lecture[0]['Pupil'] as $pupil)
+			{
+				$pupils .= "<tr class='";
+				$pupils .= $i%2==0?"plain":"alt";
+				$pupils .= "'><td>{$pupil['name']}</td><td>{$pupil['email']}<td>";
+				$pupils .= $pupil['certificate']!=''?"Sí":"No"."</td></td>";
+				$i++;
+			}
+			$pupils .= "</tbody></table>";
+		}
+
+		$votesText = $nVotes>0?"tiene $nVotes votos":"no tiene votos";
+		$pupilsText = $nPupil>0?"hay $nPupil asistentes confirmados":"no hay asistentes confirmados";
+
+		echo "
+		<p>
+			<h2> ¡Este curso todavía no se ha dado! </h2>
+			<p>
+				El glorioso día en que este curso se de todavía no ha llegado. Es una oportunidad para
+				saber si te parece interesante y si vas a acudir.
+			</p>
+			<p>
+				Hasta ahora, este curso $votesText y $pupilsText.
+				<p>
+					$pupils
+				</p>
+			</p>
+		</p>
+		";
+	
+		$closed = $lecture[0]['Course']['closed'];
+		$allowedVotes = $lecture[0]['Course']['votes'];
+	
+		if (($closed == 0) && ($allowedVotes == 1) && ($canVote == 1))
+		echo "
+		<p>
+			<h2> ¡Danos tu opinión! </h2>
+			<p>
+				Si crees que te puede interesar puedes darle un +1. 
+				De esta forma el GUL sabrá qué cursos son los 
+				más interesantes. Estos votos son anónimos, por cierto.
+			</p>
+			<p>
+				En el gul tenemos la costumbre de confiar en las personas así que no hemos puesto ningún 
+				filtro para los votos. No contamos las IPs ni hacemos nada para saber si votas una vez 
+				por cada curso. Así que si votas más veces de las debidas o no te portas todo lo bien que
+				debieras no nos vamos a dar ni cuenta.
+			</p>
+		<p>
+		<form method='post' action='{$html->url('/votes/add')}'>
+			{$html->hidden('Vote/lecture', array('value' => $lecture[0]['Lecture']['id'], 'class' => 'hidden'))}
+			{$html->submit('Voto +1')}
+		</form>
+		</p>
+
+		<p>
+		<h2> ¿Quieres ir? </h2>
+		<p>
+		Además de votar este curso puedes confirmar tu presencia. La mayoría de las charlas son de libre
+		asistencia pero puedes confirmar que vas a ir para hacernos una idea del aforo. De esta forma
+		sabremos si dar el curso en el despacho, reservar un aula, un salón de actos, un estadio olímpico....
+		</p>
+
+		<form method='post' action='{$html->url('/pupils/add')}'>
+			{$html->hidden('Pupil/lecture', array('value' => $lecture[0]['Lecture']['id'], 'class' => 'hidden'))}
+		    <p>
+				Tu nombre (no pongas nicks, pon tu nombre real y apellidos):
+				{$html->input('Pupil/name')}
+			</p>
+			<p>
+				Tu e-mail:
+				{$html->input('Pupil/email', array('value' => $useremail))}
+			</p>
+			<p>
+				Algunas personas necesitan un cerficado de asistencia, por temas de trabajo, INEM, etc. 
+				Si ese es tu caso, marca la siguiente casilla:
+				<div class='important'>
+					<input type='checkbox' name='data[Pupil][certificate]' style='display:inline' value='1'/> Si, quiero un certificado de asistencia firmado por el presidente del Grupo de Usuarios de Linux de la Universidad Carlos III de Madrid
+				</div>
+				Si tras confirmar la asistencia te surge algo y no puedes ir, manda un correo a <strong>info arroba gul punto uc3m punto es </strong> y nos comentas qué es eso tan importante que tienes que hacer que no te deja ir al curso :)
+			</p>
+			<p>
+				Tu confirmación se añadirá a la lista de personas confirmadas, pero tu nombre sólo será visible
+				para los usuarios registrados por motivos obvios. ¡Respetamos la privacidad!
+			</p>
+			<p>
+			{$html->submit('Confirmar asistencia!')}
+			</p>
+		</form>
+		</p>
+	</p>
+	";
+	
+	} 
+	else
+	{
+	echo "
+		<h2> Este curso ya se ha dado. ¿Comentarios? </h2>
+	";
+?>
+<p>
+	Aquí se muestran los comentarios que ha habido sobre este curso. Los verdes son positifos, los rojos negatifos y los azules son los votos "+1" que recibió en su día.
+</p>
+<p>
+	Si quieres decir algo, al final de la página tienes el formulario.
+</p>	
+<?php 	
+	$i = 0;
+	$totalcommentmark = 0;
+	$votes = $lecture[0]['Comment']; 
+	foreach($votes as $vote)
+	{
+		$class = "commentgood";
+		
+		$totalcommentmark += $vote['mark'];
+		
+		if ($vote['mark'] < 0)
+			$class = "commentbad";
+			
+		echo " 
+			<div class='$class'>
+		 		<h3> {$vote['from']} dice:</h3> <div class='subtitle'> ".substr($vote['datetime'],0,16)." </div>
+				<div class='comment'>
+					{$vote['comments']}
+					<p>mark: {$vote['mark']} </p>
+				</div>
+			</div>
+		";			
+	}
+	echo "
+	<p>
+		Puntuación total de los comentarios: $totalcommentmark
+	</p>
+	";
+	?>
+
+<h2> &iquest;Algo que a&ntilde;adir? </h2>
+
+<form method="post" action="<?php echo $html->url('/comments/addfull')?>">
+	<p> 
+		Tu nombre:
+   		<?php echo $html->input('Comment/from', array('size' => '10', 'value' => $username)); ?>
+	</p>
+	
+	<?php
+	echo $html->hidden('Comment/lecture', array('value' => $lecture[0]['Lecture']['id'], 'class' => 'hidden')); 
+	echo $html->hidden('Lecture/course', array('value' => $lecture[0]['Lecture']['course'], 'class' => 'hidden')); 
+	?>
+	<p>
+		Tu puntuaci&oacute;n: (-1 significa muy mal, 0 neutro, 1 bien)
+		<?php echo $html->input('Comment/mark', array('value' => '1', 'size' => '3')); ?>
+	</p>
+	
+	<p>
+		Comentario:
+        <?php echo $html->textarea('Comment/comments', array('rows'=>'10')); ?>
+	</p>
+    
+	<p>
+		<?php echo $html->submit('Comentar') ?>
+	</p>
+</form>
+
+<?php
+}
+
+?>
+
+<?php		
+	echo $html->link("Volver a las jornadas", "/courses/view/{$lecture[0]['Course']['id']}");		
+?>

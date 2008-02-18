@@ -1,0 +1,47 @@
+<div id="header">
+	<h1> 
+		<%= link_to "Jornadas técnicas", :controller => "courses" %> > 
+		<%= link_to @lecture.course.title, :controller => "courses/#{@lecture.course_id}" %> > 
+		¡<strong>Yo </strong> quiero dar un curso!
+	</h1>
+</div>
+
+<% if @lecture.errors.count > 0 %>
+<div class="errorHeader">Por favor, corrige los siguientes errores: </div>
+<% end %>
+
+<% form_for :lecture, @lecture, :url => "/lectures/createfromproposeme" do |f| %>
+  <p>
+	<table>
+		<tbody>
+			<tr>
+				<td> Tu nombre: </td>
+				<td> <%= f.text_field :teacher %> </td>
+				<td class='error'> <%= @lecture.errors.on 'teacher' %> </td>
+			</tr>
+			<tr>
+				<td> Título (corto y descriptivo): </td>
+				<td> <%= f.text_field :title %> </td>
+				<td class='error'> <%= @lecture.errors.on 'title' %> </td>
+			</tr>
+			<tr>
+				<td> Descripción breve: </td>
+				<td> <%= f.text_field :briefdescription %> </td>
+				<td class='error'> <%= @lecture.errors.on 'briefdescription' %> </td>
+			</tr>
+			<tr>
+				<td> </td>
+				<td> 
+				<%= f.hidden_field :course_id, :value => @lecture.course_id %>
+			    <%= f.submit "¡Proponer este curso!" %>
+				</td>
+				<td class='error'> </td>
+			</tr>
+		</tbody>
+	</table>
+  </p>
+<% end %>
+
+<br />
+
+<%= link_to "Me rajo, paso. Quiero volver", :controller => "courses/#{@lecture.course_id}" %> 

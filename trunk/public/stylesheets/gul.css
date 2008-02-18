@@ -1,0 +1,326 @@
+body
+{
+	font-family:Verdana;
+	font-size:12px;
+	font-weight:normal;
+	margin-left:50px;
+	margin-right:50px;
+	background: #e7f7ff;
+}
+
+.course
+{
+	margin-left: auto;
+	margin-right: auto;
+	padding-left:3em;
+	margin-top:1em;
+	border-bottom:1px solid #005577;
+	width:80%;
+}
+
+.course-highlighted
+{
+	background:#c7d7ef;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left:3em;
+	margin-top:1em;
+	border-top:1px solid #005577;
+	border-bottom:1px solid #005577;
+	width:80%;
+}
+
+.course .description, .course-highlighted .description
+{
+	color:#005577;
+	margin-top:0;
+}
+
+.pupils
+{
+	margin-left: auto;
+	margin-right: auto;
+	width:60em;
+	padding-left:3em;
+	padding-right:1em;
+	margin-top:1em;
+	border:1px solid #005577;
+	padding-bottom:1em;
+}
+
+.pupils table
+{
+	border-collapse:collapse;
+}
+
+.pupiltable td
+{
+	border-bottom: 1px solid #005577;
+}
+
+.pupiltable th
+{
+	background: #c7d7ef;
+	border-top: 1px solid #005577;
+	border-bottom: 1px solid #005577;
+}
+
+.lecture
+{
+	clear:both;
+	margin-bottom:1.5em;
+	margin-right:5em;
+	margin-left:4em;
+	padding-bottom:0em;
+	background: #c7d7ef;
+	border-top: 1px solid #005577;
+	border-bottom: 1px solid #005577;
+}
+
+.lecture .content
+{
+	margin-left:9em;
+	padding:.7em;
+	margin-top:-2px;
+	margin-bottom:-2px;
+	margin-right:-2px;
+	padding-bottom:1em;
+}
+
+.lecture .mark
+{
+	float:left;
+	text-align:center;
+	color:#005577;
+	font-size:12px;
+	margin-left:1em;	
+	margin-bottom:1em;
+}
+
+.lecture .title
+{
+	font-size:12px;
+	color: #005577;
+}
+
+.lecture .author
+{
+	font-style:italic;
+}
+
+
+.phasedescription
+{
+	color: black;
+	text-align:center;	
+}
+
+.centered
+{
+	clear:both;
+	text-align:center;
+}
+
+h1
+{
+	font-size:20px;
+	font-weight:normal;
+	width:100%;
+	color: #000;
+	margin-bottom:0;
+	margin-top:0;
+	color: #005577;
+}
+
+h2
+{
+	font-size:20px;
+	font-weight:normal;
+	width:100%;
+	border-bottom:1px solid #005577;
+	margin-top:0.5em;
+	color: #005577;
+}
+
+h3
+{
+	font-size:12px;
+	font-weight:normal;
+	width:100%;
+	margin-bottom:0;
+	margin-top:0;
+}
+
+img
+{
+}
+
+a
+{
+	text-decoration:none;
+	color: #005577;
+}
+
+a:visited
+{
+	text-decoration:none;
+	color:#005577;
+}
+
+a:hover
+{
+	text-decoration:underline;
+	color:#005577;
+}
+
+.senkiu
+{
+	font-size:10px;
+}
+
+#footer
+{
+	height:4em;
+	text-align: right;
+	font-size:9px;
+	color:#000;
+	margin-top: 50px;
+	background: #c7d7f0;
+	border-top: 1px solid #005577;
+}
+
+#header
+{
+	height:3.5em;
+	color:#000;
+	background:#c7d7ef;
+	text-decoration:none;
+	border-bottom:1px solid #005577;
+}
+
+#header h1
+{
+	color: black;
+	font-size:10px;
+	font-weight:normal;
+}
+
+#header a, #header a:visited
+{
+	text-decoration:none;
+	color: black;
+}
+
+#header a:hover
+{
+	text-decoration:none;
+}
+
+.errorHeader
+{
+	padding-top:5px;
+	padding-bottom:5px;
+	background: #dd4237;
+	color: #fff;
+}
+
+.error
+{
+	color: #dd4237;
+}
+
+.notice
+{
+	color: #060606;
+	background: #88f93e;
+	font-size: 15px;
+	text-align: center;
+	margin-top:0;
+}
+
+input, textarea, select
+{
+	background: #ff8;
+	border:1px solid #005577;
+}
+
+#userbox 
+{
+	float:right;
+	text-align:right;
+	background: #c7d7ef;
+	color: black;
+}
+
+#userbox a, #userbox a.visited
+{
+	color:black;	
+}
+
+.calendar
+{
+	margin-left:1em;
+	margin-right:1em;
+	border: 2px solid #005577;
+	padding:0;
+	border-spacing:0;
+	border-collapse:collapse;
+	font-size:15px;
+}
+
+.calendar th
+{
+	font-weight:bold;
+	font-size:12px;
+	width:10%;
+	padding-top:.5em;
+	padding-bottom:.5em;
+	text-align:center;
+	color:black;
+	background: #c7d7ef;
+}
+
+.calendar td
+{
+	border: 2px solid #005577;
+	font-size:12px;
+	height:10px;
+	padding:0;
+	text-align:left;
+	vertical-align:top;
+	padding-bottom:1em;
+}
+
+.subcalendar
+{
+	border-spacing:0;
+	border-collapse: collapse;
+}
+
+.subcalendar td
+{
+	border:0;
+}
+
+.subcalendar th
+{
+	border:0;
+	background:#5a98af;
+}
+
+.calendardoesnotinclude, .calendardoesnotinclude ul
+{
+}
+
+.big
+{
+	font-size: 15px;	
+}
+
+.selectstyle
+{
+	background:#c7d7ef;
+	border:none;
+	font-size:10px;
+	color:black;
+}

@@ -1,0 +1,42 @@
+<h1> Apadrina a un lechón </h1>
+
+<form method='post' action=<?php $html->url('/users/accept'); ?>>
+
+<table>
+	<tr class="head">
+		<th> Login </th>
+		<th> e-mail </th>
+		<th> ¿Apadrinar? </th>
+	</tr>
+	
+	<?php 
+	
+	$i = 0;
+	foreach($users as $user)
+	{
+		$class = "plain";
+		if ($i++ % 2 == 1)
+			$class="alt";
+
+
+		$id = $user['User']['id'];
+		echo "
+		<tr>
+			<td> {$user['User']['username']}</td>
+			<td> {$user['User']['email']}</td>			
+			<td> <input type='checkbox' name='data[User][$id]' id='User$id' value='1' />
+		</tr>
+		";
+	}
+	
+	echo "
+	<tr><td></td><td></td><td>
+	{$html->submit('¡Apadrinar!', array('name' => 'accept'))}
+	{$html->submit('¡A tomar por c*lo!', array('name' => 'reject'))}
+	</td></tr>
+	";
+// <td> {$html->checkboxTag("User/{$user['User']['id']}")} </td>
+
+	?>
+</table>
+</form>

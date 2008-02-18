@@ -1,0 +1,29 @@
+xml.instruct!
+
+xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
+ xml.channel do
+
+   xml.title       "New lectures proposed - cursos.gul.es"
+   xml.link        "http://cursos.voiser.es"
+   xml.description "bla bla bla"
+
+   @lectures.each do |lecture|
+     xml.item do
+       xml.title       lecture.title
+       xml.link        "http://cursos.voiser.es/courses/#{lecture.course_id}##{lecture.id}"
+       xml.description lecture.briefdescription
+       xml.guid        "http://cursos.voiser.es/courses/#{lecture.course_id}##{lecture.id}"
+       xml.pubDate     lecture.updated_at.rfc822 if lecture.updated_at
+     end
+   end
+
+   @news.each do |news|
+     xml.item do
+       xml.title       news.title
+       xml.description news.body
+       xml.pubDate     news.updated_at.rfc822
+     end
+   end
+
+ end
+end

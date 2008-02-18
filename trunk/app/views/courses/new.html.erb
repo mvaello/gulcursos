@@ -1,0 +1,23 @@
+<h1>New course</h1>
+
+<%= error_messages_for :course %>
+
+<% form_for(@course) do |f| %>
+  <p>
+	<table>
+		<tbody>
+			<tr>
+				<td> Título: </td>
+				<td> <%= f.text_field :title %> </td>
+			</tr>
+			<tr>
+				<td> Descripción: </td>
+				<td> <%= f.text_field :description %> </td>
+			</tr>
+		</tbody>
+	</table>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', courses_path %>

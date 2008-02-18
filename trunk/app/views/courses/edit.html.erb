@@ -1,0 +1,28 @@
+<h1>Editar curso</h1>
+
+<p class="notice"><%= flash[:notice] %> </p>
+
+<% form_for(@course) do |f| %>
+  <p>
+	<table>
+		<tbody>
+			<tr>
+				<td> Título: </td>
+				<td> <%= f.text_field :title %> </td>
+			</tr>
+			<tr>
+				<td> Descripción: </td>
+				<td> <%= f.text_field :description %> </td>
+			</tr>
+			<tr>
+				<td> Fase: (0 = propuestas, 1 = votaciones, 2 = organizando, 3 = cerradas) </td>
+				<td> <%= f.text_field :phase %> </td>
+			</tr>
+		</tbody>
+	</table>
+	
+    <%= f.submit "Editar" %>
+  </p>
+<% end %>
+
+<%= link_to 'Volver', courses_path %>
