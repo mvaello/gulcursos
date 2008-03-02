@@ -58,7 +58,7 @@
 			else
 			{
 				echo $html->link("Entrar", "/users/login");
-				echo " | &iquest;No tienes cuenta?  " . $html->link("¡Hazte con una!", "/users/add");
+//				echo " | &iquest;No tienes cuenta?  " . $html->link("¡Hazte con una!", "/users/add");
 			}
 		?>		
 	</div>
