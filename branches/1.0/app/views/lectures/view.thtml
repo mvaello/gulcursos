@@ -1,6 +1,6 @@
 <?php 
 /*
- * No estaria de mas quitar los tronchos de html y hacerf funcioncitas
+ * No estaria de mas quitar los tronchos de html y hacer funcioncitas
  */
 ?>
 
@@ -114,6 +114,41 @@
 				</p>
 			</p>
 		</p>
+		<p>
+			<h2> ¿Quieres ir? </h2>
+			<p>
+				Además de votar este curso puedes confirmar tu presencia. La mayoría de las charlas son de libre
+				asistencia pero puedes confirmar que vas a ir para hacernos una idea del aforo. De esta forma
+				sabremos si dar el curso en el despacho, reservar un aula, un salón de actos, un estadio olímpico....
+			</p>
+
+			<form method='post' action='{$html->url('/pupils/add')}'>
+				{$html->hidden('Pupil/lecture', array('value' => $lecture[0]['Lecture']['id'], 'class' => 'hidden'))}
+	    		<p>
+					Tu nombre (no pongas nicks, pon tu nombre real y apellidos):
+					{$html->input('Pupil/name')}
+				</p>
+				<p>
+					Tu e-mail:
+					{$html->input('Pupil/email', array('value' => $useremail))}
+				</p>
+				<p>
+					Algunas personas necesitan un cerficado de asistencia, por temas de trabajo, INEM, etc. 
+					Si ese es tu caso, marca la siguiente casilla:
+					<div class='important'>
+						<input type='checkbox' name='data[Pupil][certificate]' style='display:inline' value='1'/> Si, quiero un certificado de asistencia firmado por el presidente del Grupo de Usuarios de Linux de la Universidad Carlos III de Madrid
+					</div>
+					Si tras confirmar la asistencia te surge algo y no puedes ir, manda un correo a <strong>info arroba gul punto uc3m punto es </strong> y nos comentas qué es eso tan importante que tienes que hacer que no te deja ir al curso :)
+				</p>
+				<p>
+					Tu confirmación se añadirá a la lista de personas confirmadas, pero tu nombre sólo será visible
+					para los usuarios registrados por motivos obvios. ¡Respetamos la privacidad!
+				</p>
+				<p>
+					{$html->submit('Confirmar asistencia!')}
+				</p>
+			</form>
+		</p>
 		";
 	
 		$closed = $lecture[0]['Course']['closed'];
@@ -134,58 +169,21 @@
 				por cada curso. Así que si votas más veces de las debidas o no te portas todo lo bien que
 				debieras no nos vamos a dar ni cuenta.
 			</p>
-		<p>
-		<form method='post' action='{$html->url('/votes/add')}'>
-			{$html->hidden('Vote/lecture', array('value' => $lecture[0]['Lecture']['id'], 'class' => 'hidden'))}
-			{$html->submit('Voto +1')}
-		</form>
+		
+			<p>
+		
+				<form method='post' action='{$html->url('/votes/add')}'>
+					{$html->hidden('Vote/lecture', array('value' => $lecture[0]['Lecture']['id'], 'class' => 'hidden'))}
+					{$html->submit('Voto +1')}
+				</form>
+			</p>
 		</p>
-
-		<p>
-		<h2> ¿Quieres ir? </h2>
-		<p>
-		Además de votar este curso puedes confirmar tu presencia. La mayoría de las charlas son de libre
-		asistencia pero puedes confirmar que vas a ir para hacernos una idea del aforo. De esta forma
-		sabremos si dar el curso en el despacho, reservar un aula, un salón de actos, un estadio olímpico....
-		</p>
-
-		<form method='post' action='{$html->url('/pupils/add')}'>
-			{$html->hidden('Pupil/lecture', array('value' => $lecture[0]['Lecture']['id'], 'class' => 'hidden'))}
-		    <p>
-				Tu nombre (no pongas nicks, pon tu nombre real y apellidos):
-				{$html->input('Pupil/name')}
-			</p>
-			<p>
-				Tu e-mail:
-				{$html->input('Pupil/email', array('value' => $useremail))}
-			</p>
-			<p>
-				Algunas personas necesitan un cerficado de asistencia, por temas de trabajo, INEM, etc. 
-				Si ese es tu caso, marca la siguiente casilla:
-				<div class='important'>
-					<input type='checkbox' name='data[Pupil][certificate]' style='display:inline' value='1'/> Si, quiero un certificado de asistencia firmado por el presidente del Grupo de Usuarios de Linux de la Universidad Carlos III de Madrid
-				</div>
-				Si tras confirmar la asistencia te surge algo y no puedes ir, manda un correo a <strong>info arroba gul punto uc3m punto es </strong> y nos comentas qué es eso tan importante que tienes que hacer que no te deja ir al curso :)
-			</p>
-			<p>
-				Tu confirmación se añadirá a la lista de personas confirmadas, pero tu nombre sólo será visible
-				para los usuarios registrados por motivos obvios. ¡Respetamos la privacidad!
-			</p>
-			<p>
-			{$html->submit('Confirmar asistencia!')}
-			</p>
-		</form>
-		</p>
-	</p>
-	";
-	
+		";
 	} 
 	else
 	{
-	echo "
-		<h2> Este curso ya se ha dado. ¿Comentarios? </h2>
-	";
 ?>
+<h2> Este curso ya se ha dado. ¿Comentarios? </h2>
 <p>
 	Aquí se muestran los comentarios que ha habido sobre este curso. Los verdes son positifos, los rojos negatifos y los azules son los votos "+1" que recibió en su día.
 </p>
