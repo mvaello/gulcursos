@@ -1,0 +1,25 @@
+<h1>Vote or comment for <?php echo $lecturetitle?></h1>
+<form method="post" action="<?php echo $html->url('/votes/addfull')?>">
+	<p>
+		<?php
+			echo $html->hidden('Vote/lecture', array('value' => $lectureid)); 
+			echo $html->hidden('Lecture/course', array('value' => $courseid)); 
+		?>
+	</p>
+    <p>
+        Mark: (-1 means bad, 0 means no vote, 1,2,3... means you really enjoyed!)
+        <?php echo $html->input('Vote/mark', array('size' => '3', 'value' => '1')); ?>
+    </p>
+    <p>
+        From: (your name)
+        <?php echo $html->input('Vote/from', array('size' => '30', 'value' => 'anonymous')); ?>
+	</p>
+
+	<p>
+		Comment: (you can leave it blank but...)
+        <?php echo $html->textarea('Vote/comments', array('rows'=>'10')); ?>
+    </p>
+    <p>
+        <?php echo $html->submit('Comment') ?>
+    </p>
+</form>

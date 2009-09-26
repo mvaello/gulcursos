@@ -1,0 +1,363 @@
+/*------[GENERAL]--------*/
+* { margin: 0; padding: 0; }
+
+body{
+	background:#214563 repeat-x top left;
+	color: #000; 
+   	font: 52.5%  Arial, Helvetica, sans-serif;
+}
+
+a { color: #0000DD; text-decoration:none; }
+a:hover { }
+
+ul{ list-style:none;}
+
+h1,h2,h3,h4,h5,h6 { font-family:  Arial, sans-serif; }
+
+/*-------[   Layout   ]---------*/
+ #wrap{ position:relative; width:980px; margin:15px auto; }
+
+ #header{ height:274px; }
+
+/*-------[ Logo + Navigation ]---------*/
+	/*Adjust LOGO position by modifiying the LEFT proprety*/
+	#logo{ position:absolute; top:15px; left:10px;
+		   font-family: Arial, "Times New Roman", Times, serif; font-size: 32px; color: #fff; }
+	#logo a{ color:#fff; text-decoration:none; }
+	#logo a:hover{ text-decoration:underline; }
+	
+	/*Adjust SLOGAN  position by modifiying the LEFT proprety*/
+	#slogan{ position:absolute; top:15px; left:230px; padding:7.5px 0 7.5px 10px; border-left:1px solid #fff;
+			 color: #fff; font-family: "Times New Roman", Times, serif; font-size: 18px; letter-spacing:1px; font-style:italic;	}
+	
+	#header-pic{ position:absolute; top:114px; left:0; height:160px; }
+
+	#nav {
+		position:absolute;
+		width:980px;
+		top:76px; left:0;
+		height:34px;
+		background-color:#294963;
+		border-bottom:4px solid #ded384; }
+		
+		#nav ul{ padding:0; margin-left:30px; list-style: none; }
+			#nav li{ display: inline; }
+			
+				#nav a{ 
+					display: block; 
+					float: left;
+					padding:10px 20px 10px 20px;
+					font:12px Verdana, sans-serif;
+					text-transform:uppercase;
+					color:#fff;
+					text-decoration:none;
+					outline: none;
+				}
+				
+				#nav a:hover{ background-color:#081829; }
+				#nav .active a{ background:#081829 bottom center no-repeat; }
+
+
+
+#content-wrap{ padding: 30px ; background-color:#FFFFFF; }
+#content{ position:relative; }
+		/* --- content styling ---*/
+		#content { font-size: 1.5em; line-height: 1.4em; color:#111;  }
+
+		#content h1{margin-bottom:20px;  font-size:28px;}
+		
+		
+			#content .first, #content .drop_cap { padding: 0.17em 0.08em 0.05em 0; font-size: 3.4em; line-height: 0.6em; color: #aaa; float: left; }
+			
+			#content p { margin: 0 0 1em 0; }
+			
+			#content a, #content a:visited { text-decoration: none; }
+			
+				#content a:hover { text-decoration: none; }
+				
+			#content blockquote { font-style:italic; padding:10px; padding-left:35px; margin-bottom:5px; background:#fff no-repeat top left; color:#111;}
+			
+				#content blockquote ul, #content blockquote ol { margin: 0 0 1.46667em 15px;  }
+		
+			#content ul, #content ol { margin: 0 0 1.46667em 40px; }
+			
+			#content ul { list-style: disc; }
+			
+				#content li { margin: 0 0 0.4em 0; }
+				
+					#content ul li ul, #content ul li ol, #content ol li ul, #content ol li ol { margin: 0 0 0 25px; }
+			
+		
+				#content img{ display: block; clear: both; padding: 6px; }
+				
+				.imgfloatleft{ float:left; margin-right:10px; }
+				.imgfloatright{ float:right; }
+			
+			.update { border: 1px solid #f2ec49; background: #fffdcb; padding:10px; margin:0; margin-bottom:1em; }
+	
+
+	/* --- Sidebar ---*/
+	#sidebar{ position:absolute; right:30px; top:302px;
+			  width:230px; height:150px; }
+
+		/* --- sidebar styling---*/
+		.sidebar-links{
+			background:#29517b url(img/bg_side_links.jpg) repeat-x bottom left ;
+			padding:20px;margin-bottom:15px;}
+
+			.sidebar-links h3{ margin-bottom:15px; font-size: 16px; color:#fff; }
+			
+			.sidebar-links ul{ margin: 10px 0; }
+			.sidebar-links ul li{ border-bottom: 1px solid #486a8b; padding: 10px 8px; }
+			
+			.sidebar-links ul li a{ color: #9fbfd6; text-decoration: none; font-size: 14px; }
+			.sidebar-links ul li a:hover{ color: #fff; }
+			.sidebar-links ul li.active{ background: #132b44; border-bottom: 0;padding-top: 11px; margin: 0 -20px;
+										 padding-left: 28px; margin-top: -1px; position: relative; }
+			.sidebar-links ul li.active a{ color: #fff; }
+
+		/* --- --- */
+		.sidebar-info{
+			border-top:3px solid #ded384;
+			background-color:#efebe7;
+			padding:20px; margin-bottom:15px;}
+			
+			.sidebar-info h3{ margin-bottom:15px; }
+			.sidebar-info h4 { text-align:center; font-size:23px;}
+			.sidebar-info p{ margin-bottom:10px; font-size:13px; }
+			.sidebar-info ul{ list-style:inside; list-style-type:disc; font-size:100%;}
+			
+	/* --- Footer --- */
+	#footer{
+		height:38px;
+		width:980px;
+		background-color:#001839;
+		font-size:12px;}
+	
+		#footer div.text{ padding:11px 0 0 25px; color:#94b6de; float: left;}
+		#footer div.icons{ padding:11px 25px 0 25px; float:right; }
+		#footer div.icons img{ margin-left: 10px; }
+		#footer a{ color:#94b6de;}
+		#footer a:hover{ color:#fff;}
+
+
+/*----------------------------*/
+h1 {
+	font-family: Arial, Georgia, "Times New Roman", Times, serif;
+	font-size: 26px;
+	color: #002852;
+	margin-bottom:15px;
+}
+
+h2 {
+	font-family: Arial, Georgia, "Times New Roman", Times, serif;
+	font-size: 22px;
+	color: #002852;
+	margin-bottom:20px;
+	margin-top:20px;
+}
+
+h3 {
+	font-family: Arial, Georgia, "Times New Roman", Times, serif;
+	font-size: 19px;
+	color: #002852;
+}
+	h3 a {
+		color: #032850;
+		text-decoration: none;
+	}
+	h3 a:hover {
+		color: #124b89;
+	}
+
+h4 {
+	font-size: 16px;
+	color: #032850;
+	margin-bottom:10px;
+}
+
+h5 {
+	font-size: 14px;
+	color: #000000;
+}
+
+/* Tables
+-------------------------------------------------------------- */
+
+table   { margin-bottom: 1.4em; width: 100%;}
+th      { border-bottom: 2px solid #ccc; font-weight: bold; }
+td      { border-bottom: 1px solid #ddd; text-align: center;}
+th,td   { padding: 4px 10px 4px 0; }
+tfoot   { font-style: italic; }
+caption { background: #ffc; }
+
+/* Success, error & notice boxes for messages and errors. */
+.error,
+.notice, 
+.success    { padding: .8em; margin-bottom: 1em; border: 2px solid #ddd; }
+.error      { background: #FBE3E4; color: #D12F19; border-color: #FBC2C4; }
+.notice     { background: #FFF6BF; color: #817134; border-color: #FFD324; }
+.success    { background: #E6EFC2; color: #529214; border-color: #C6D880; }
+.error a    { color: #D12F19; }
+.notice a   { color: #817134; }
+.success a  { color: #529214; } 
+
+/* form design*/
+fieldset {
+	margin: 0 5px 10px 0px;
+	padding: 2px;
+	border: 1px dotted #ccc;
+	
+	
+	background-color: #fff;
+} 
+legend { background-color:#000000; color:#FFFFFF; text-transform:uppercase; padding:3px; margin-left:10px; margin-bottom:10px; font-size:12px;}
+form p { margin: 5px 0 0 0; form }
+label {  text-align:right; margin-right:10px; display:block; width:140px; float:left; clear:both; font-weight:bold; }
+input.text { width:315px; } 
+textarea { width: 450px; margin: 5px 15px 15px 15px; }  
+
+
+
+div.teacher{
+	font-size:10px;
+	color:#888
+}
+
+div.paging{
+	float:right;
+}
+
+div.paging div{
+	float:left;
+}
+
+div.error {
+	text-align: center;
+	color: #DD2222;
+	font-size: 18px;
+}
+
+div.deletecomment{
+	text-align:right;
+	margin-right: 30px;
+}
+
+td.open, div.good {
+	color: #0a0;
+}
+
+td.closed, div.bad {
+	color:#a00;
+}
+
+#description
+{
+	margin-left: auto;
+	margin-right:auto;
+	border: 1px solid #C2C2FB;
+	padding:20px;
+	background: #E3E3FB;
+}
+
+#mark
+{
+	text-align:center;
+	padding:30px;
+	border: 1px solid #f80;
+	float:right;
+	font-size:20px;
+	background: #ff8;
+}
+
+#mark .title
+{
+	font-size:15px;
+}
+
+.commentgood
+{
+	border: 1px solid #ccc;
+	margin:20px;
+	padding: 10px;
+	margin-bottom:10px;
+	background: #cfc;
+}
+
+.commentbad
+{
+	border: 1px solid #ccc;
+	margin:20px;
+	padding: 10px;
+	margin-bottom:10px;
+	background: #ebb;
+}
+
+.subtitle
+{
+	margin-top:0;
+	margin-bottom:15px;
+	margin-left: 0;
+	color:#888;
+	font-size:8px;
+}
+
+div#flashMessage {
+	text-align: center;
+	color: #DD2222;
+	font-size: 18px;
+	background: #FBE3E4;
+	color: #D12F19;
+	border-color: #FBC2C4;
+	padding: .8em;
+	margin-bottom: 1em;
+	border: 2px solid #ddd;
+}
+
+div.centered{
+	text-align: center;
+}
+
+div.centered img{
+	margin: 0 auto;
+}
+
+table.subcalendar th{
+	height: 20px;
+}
+table.subcalendar{
+	height: 300px;
+	margin-bottom: 0px;
+}
+
+table.calendar td{
+	vertical-align: top;
+	padding: 3px;
+}
+
+td.talk-unassisted {
+	color: #DD2222;
+	background: #FBE3E4;
+	color: #D12F19;
+}
+
+/* Scaffold View */
+dl {
+	line-height: 2em;
+	margin: 0em 0em;
+	width: 60%;
+}
+dl.altrow {
+	background: #f4f4f4;
+}
+dt {
+	font-weight: bold;
+	padding-left: 4px;
+	vertical-align: top;
+}
+dd {
+	margin-left: 10em;
+	margin-top: -2em;
+	vertical-align: top;
+}
+

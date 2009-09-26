@@ -1,0 +1,106 @@
+
+<h1 id="courses">Jornadas</h1>
+
+<p>
+	Aquí puedes ver las jornadas en las que hemos trabajado y las que están en desarrollo.
+</p>
+
+<table>
+	<tr class="head">
+		<th>Nombre</th>
+		<th>Descripción</th>
+		<th>Cursos</th>
+		<th>Estado</th>
+<?php
+	if ($session->check("User"))
+	{
+		echo "<th> Acciones </th>";
+		echo "<th> Cosas para que los del consejo GUL dejen de dar guerra </th>";
+	}
+?>
+	</tr>
+	
+<?php
+	$i = 0;
+	foreach($courses as $course)
+	{
+		$nLectures = count($course['Lecture']);
+		$id = $course['Course']['id'];
+		
+		$class = "plain";
+		if ($i++ % 2 == 1)
+			$class="alt";
+		
+		echo "
+	<tr class=\"$class\">
+
+		<td> {$html->link($course['Course']['title'], "view/{$id}")} </td>
+
+		<td> {$course['Course']['description']} </td>
+
+		<td> {$nLectures} </td>";
+
+		if ($course['Course']['closed'] == 0)
+		{
+			echo "<td class='open'> En preparaci&oacute;n </td>"; 
+
+			if ($session->check("User"))
+			{
+				echo "<td> ".$html->link("Cerrar", "/courses/close/{$id}")." </td>";
+			}
+		}
+		else
+		{
+			echo "<td class='closed'> Cerrada </td>"; 
+
+			if ($session->check("User"))
+			{
+				echo "<td> ".$html->link("Abrir", "/courses/open/{$id}")." </td>";
+			}
+		}
+
+		if ($session->check("User"))
+		{
+			echo "<td>";
+
+			if ($course['Course']['closed'] == 0)
+			{
+				if ($course['Course']['proposals'] == 0)
+				{
+					echo "<span class='closed'> No se admiten propuestas </span>"; 
+					echo $html->link(" - Permitir propuestas", "/courses/allowproposals/{$id}");
+				}
+				else
+				{
+					echo "<span class='open'> Se admiten propuestas </span>"; 
+					echo $html->link(" - Que se callen", "/courses/denyproposals/{$id}");				
+				}
+
+				echo "<br />";
+
+				if ($course['Course']['votes'] == 0)
+				{
+					echo "<span class='closed'> No se admiten votos </span>"; 
+					echo $html->link(" - Permitir votos", "/courses/allowvotes/{$id}");
+				}
+				else
+				{
+					echo "<span class='open'> Se admiten votos </span>"; 
+					echo $html->link(" - La democracia es una caca", "/courses/denyvotes/{$id}");				
+				}
+			}
+			
+			echo "</td>";
+		}
+		
+		echo"
+	</tr>
+		";
+	}
+?>
+</table>
+
+<?php
+if ($session->check("User"))
+	echo $html->link("Nueva jornada", "/courses/add");
+?>

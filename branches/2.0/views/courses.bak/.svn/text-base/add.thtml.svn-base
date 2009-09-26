@@ -1,0 +1,16 @@
+<h1>Nueva jornada</h1>
+<form method="post" action="<?php echo $html->url('/courses/add')?>">
+    <p>
+        Nombre de la jornada:
+        <?php echo $html->input('Course/title', array('size' => '40'))?>
+        <?php echo $html->tagErrorMsg('Course/title', 'Title is required.') ?>
+    </p>
+    <p>
+        Unas palabras:
+        <?php echo $html->textarea('Course/description', array('rows'=>'10')) ?>
+        <?php echo $html->tagErrorMsg('Course/description', 'Body is required.') ?>
+    </p>
+    <p>
+        <?php echo $html->submit('Guardar!') ?>
+    </p>
+</form>

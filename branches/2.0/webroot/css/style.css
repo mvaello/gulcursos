@@ -1,0 +1,412 @@
+body
+{
+	font-family:Verdana;
+	font-size:12px;
+	font-weight:normal;
+	margin-left:50px;
+	margin-right:50px;
+	background: #e7f7ff;
+}
+
+.centered
+{
+	clear:both;
+	text-align:center;
+}
+
+h1
+{
+	font-size:20px;
+	font-weight:normal;
+	width:100%;
+	border-bottom: 1px solid #005577;
+	color: #005577;
+	margin-bottom: 10px;
+}
+
+h2
+{
+	font-size:15px;
+	font-weight:normal;
+	width:100%;
+	border-bottom: 1px solid #005577;
+	margin-bottom: 10px;
+	margin-top: 50px;
+}
+
+h3
+{
+	font-size:12px;
+	font-weight:normal;
+	width:100%;
+	border-bottom: 1px solid #005577;
+	margin-bottom:0;
+	margin-top:0;
+}
+
+img
+{
+	border-width:0px
+}
+
+a
+{
+	text-decoration:underline;
+	color:#084f6d;
+}
+
+a:visited
+{
+	text-decoration:underline;
+	color:#084f6d;
+}
+
+a:hover
+{
+	text-decoration:underline;
+	color:#084f6d;
+}
+
+#login
+{
+	text-align:right;
+	width:100%;
+	background:#c7d7ef;
+	color:#000;
+}
+
+#login a
+{
+	color: #084f6d;
+	text-decoration:underline;
+}
+
+#footer
+{
+	text-align: right;
+	font-size:9px;
+	color:#000;
+	margin-top: 50px;
+	background: #c7d7f0;
+	border-top: 1px solid #005577;
+}
+
+input, textarea
+{
+	border: 1px solid #005577;	
+	display:block;
+	background: #ff8;
+	margin: 5px;
+}
+
+input[type=hidden]{
+	margin: 0px;
+	border: 0px;
+}	
+
+
+.hidden
+{
+	display:none;
+}
+
+select
+{
+	border: 1px solid #005577;	
+	background: #ff8;
+	margin: 5px;
+}
+
+table
+{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #005577;
+	padding:0;
+	border-spacing:0;
+}
+
+tr.plain
+{
+	background: #eef;
+}
+
+tr.alt
+{
+	background: #ddf;
+}
+
+tr.head
+{
+	background: #c7d7ef;
+}
+
+td
+{
+	padding:10px;
+	border:none;
+}
+
+th
+{
+	padding:10px;
+	border:none;
+}
+
+.subtitle
+{
+	margin-top:0;
+	margin-bottom:20px;
+	margin-left: 0;
+	color:#888;
+	font-size:8px;
+}
+
+#shortdescription
+{
+	margin-top:0;
+	margin-bottom:20px;
+	margin-left: 0;
+	color:#005577;
+}
+
+#description
+{
+	margin-left: auto;
+	margin-right:auto;
+	border-top: 1px solid #005577;
+	border-bottom: 1px solid #005577;
+	padding:20px;
+	background:#c7d7ef;
+}
+
+.commentgood
+{
+	border: 1px solid #ccc;
+	margin:30px;
+	margin-bottom:10px;
+	background: #cfc;
+}
+
+.commentbad
+{
+	border: 1px solid #ccc;
+	margin:30px;
+	margin-bottom:10px;
+	background: #ebb;
+}
+
+.quickvote
+{
+	border: 1px solid #ccc;
+	margin:30px;	
+	background: #ccf;
+}
+
+li
+{
+	list-style:circle;
+}
+
+li strong
+{
+	color:#555;
+	font-weight:normal;
+}
+
+.alert
+{
+	background:#f88;
+	clear:both;
+	margin:10px;
+	padding:10px;
+	border: 1px solid #f00;
+}
+
+.important
+{
+	background:#cfc;
+	clear:both;
+	margin:10px;
+	padding:10px;
+	border: 1px solid #080;	
+}
+
+#navigation, #navigation a, #navigation a:visited, #navigation a:hover
+{
+	font-size:9px;
+	color:#000;
+	background:#c7d7ef;
+	text-decoration:none;
+	border-bottom:1px solid #005577;
+}
+
+.open
+{
+	color: #0a0;
+}
+
+.closed
+{
+	color:#a00;
+}
+
+p.flash
+{
+	clear:both;
+	text-align:center;
+}
+
+#mark
+{
+	text-align:center;
+	padding:30px;
+	border: 1px solid #f80;
+	float:right;
+	font-size:20px;
+	background: #ff8;
+}
+
+#mark .title
+{
+	font-size:15px;
+}
+
+.good
+{
+	color: #0a0;
+}
+
+.bad
+{
+	color: #a00;
+}
+
+.zero
+{
+	color: #aaa;
+}
+
+#staff-msg
+{
+	text-align:center;
+	background:#800;
+	color:#fff;
+	border: 1px solid #f00;
+	padding:10px;
+	margin-bottom:1em;
+}
+
+.calendar
+{
+}
+
+.calendar th
+{
+	width:10%;
+	background: #c7d7ef;
+}
+
+.calendar td
+{
+	height:10px;
+	padding:0;
+	border: 1px solid #005577;
+	text-align:left;
+	vertical-align:top;
+}
+
+.calendar ul
+{
+	margin-right:10px;
+}
+
+.subcalendar
+{
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+.subcalendar td.time
+{
+	width:10%;
+	border:0;
+	padding-right:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	vertical-align:center;
+}
+
+.subcalendar td.talk
+{
+	width:90%;
+	border:0;
+	padding-right:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	vertical-align:center;
+}
+
+
+.subcalendar th
+{
+	background:#5a98af;
+	margin:0;
+	padding:5px;
+}
+
+
+.subcalendar a
+{
+	text-decoration:none;
+}
+
+.subcalendar td.talk-assisted
+{
+	background:#8f8;
+	width:90%;
+	border:0;
+	padding-right:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	vertical-align:center;
+}
+
+.subcalendar td.talk-unassisted
+{
+	background:#f66;
+	width:90%;
+	border:0;
+	padding-right:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	vertical-align:center;
+}
+
+div.teacher{
+	font-size:10px;
+	color:#888
+}
+
+div.paging{
+	float:right;
+}
+
+div.paging div{
+	float:left;
+}
+
+div.error {
+	text-align: center;
+	color: #DD2222;
+	font-size: 18px;
+}
+
+div.deletecomment{
+	text-align:right;
+	margin-right: 30px;
+}
