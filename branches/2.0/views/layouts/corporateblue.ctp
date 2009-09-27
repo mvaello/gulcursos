@@ -11,8 +11,8 @@
 	
 <div id="wrap">
 	<div id="header">
-		 <div id="logo"><?php echo $html->link('Wide Wisse',"/"); ?></div>
-		 <div id="slogan"><?php __('Courses made easy'); ?></div>
+		 <div id="logo"><?php echo $html->link($config['title'],"/"); ?></div>
+		 <div id="slogan"><?php __($config['subtitle']); ?></div>
 		
 		<div id="nav">
 		<!-- the "active" class markes which link will be highlited-->	
@@ -23,6 +23,9 @@
 					<li><?php echo $html->link(__('login',true),array('controller'=>'users','action'=>'login')); ?></li>
 				<?php endif; ?>
 			</ul>
+		</div>
+		<div id='breadcrum'>
+			<?php $crumb->html(); ?>
 		</div>
 	<!--- header pic goes below. For each page save an 820px x 240px header picture in info/header-pics and then link to it-->
 		<div id="header-pic">

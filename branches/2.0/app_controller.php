@@ -39,7 +39,7 @@
 class AppController extends Controller {
 	var $components = array('Auth');
 
-	var $helpers = array('Html','Form','Widewisse');
+	var $helpers = array('Html','Form','Widewisse','Crumb');
 
 	function beforeFilter(){
 		$config = parse_ini_file("widewisse.ini");
@@ -47,6 +47,7 @@ class AppController extends Controller {
 		$this->Auth->allow("*");
 		$this->layout = $config['layout'];	
 		Configure::write('Config.language',$config['language']);
+		$this->set('config',$config); 
 	}
 }
 ?>
