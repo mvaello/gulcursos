@@ -20,6 +20,8 @@ class UsersController extends AppController {
 	function index() {
 		$this->User->recursive = 0;
 		$this->set('users', $this->paginate());
+
+		$this->breadcrumbs[]=array(__('Users',true),array('action'=>'index'));
 	}
 
 	function view($id = null) {
@@ -27,7 +29,10 @@ class UsersController extends AppController {
 			$this->Session->setFlash(__('Invalid User.', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->set('user', $this->User->read(null, $id));
+		$user = $this->User->read(null, $id);
+		$this->set('user', $user);
+		$this->breadcrumbs[]=array(__('Users',true),array('action'=>'index'));
+		$this->breadcrumbs[]=array($user['User']['username'],array('action'=>'view',$id));
 	}
 
 	function add() {
@@ -40,6 +45,8 @@ class UsersController extends AppController {
 				$this->Session->setFlash(__('The User could not be saved. Please, try again.', true));
 			}
 		}
+		$this->breadcrumbs[]=array(__('Users',true),array('action'=>'index'));
+		$this->breadcrumbs[]=array(__('New user',true),array('action'=>'add'));
 	}
 
 	function edit($id = null) {
@@ -58,6 +65,9 @@ class UsersController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->User->read(null, $id);
 		}
+		$this->breadcrumbs[]=array(__('Users',true),array('action'=>'index'));
+		$this->breadcrumbs[]=array($this->data['User']['username'],array('action'=>'view',$id));
+		$this->breadcrumbs[]=array(__('Edit',true),array('action'=>'edit',$id));
 	}
 
 	function delete($id = null) {

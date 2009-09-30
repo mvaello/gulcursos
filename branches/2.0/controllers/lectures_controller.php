@@ -3,6 +3,7 @@ class LecturesController extends AppController {
 
 	var $name = 'Lectures';
 	var $helpers = array('Html', 'Form');
+	var $uses = array('Lecture','Course');
 
 	function beforeFilter() {
 	        $this->Auth->allow('view','add');
@@ -21,6 +22,10 @@ class LecturesController extends AppController {
 		}
 		$this->set('canVote',$canVote);
 		$this->set('lecture', $lecture);
+
+		$this->breadcrumbs[]=array(__('Courses',true),array('controller'=>'courses','action'=>'index'));
+		$this->breadcrumbs[]=array($lecture['Course']['title'],array('controller'=>'courses','action'=>'view',$lecture['Course']['id']));
+		$this->breadcrumbs[]=array($lecture['Lecture']['title'],array('action'=>'view',$lecture['Lecture']['id']));
 	}
 
 	function add($course_id) {
@@ -34,8 +39,13 @@ class LecturesController extends AppController {
 			}
 		}
 		$this->set('course_id',$course_id);
+		$course = $this->Course->read(null,$course_id);
 		$courses = $this->Lecture->Course->find('list');
 		$this->set(compact('courses'));
+
+		$this->breadcrumbs[]=array(__('Courses',true),array('controller'=>'courses','action'=>'index'));
+		$this->breadcrumbs[]=array($course['Course']['title'],array('controller'=>'courses','action'=>'view',$course_id));
+		$this->breadcrumbs[]=array(__('New lecture',true),array('action'=>'add',$course_id));
 	}
 
 	function edit($id = null) {
@@ -58,6 +68,11 @@ class LecturesController extends AppController {
 		$this->set('lecture_title',$this->data['Lecture']['title']);
 		$this->set('course_id',$this->data['Course']['id']);
 		$this->set(compact('courses'));
+
+		$this->breadcrumbs[]=array(__('Courses',true),array('controller'=>'courses','action'=>'index'));
+		$this->breadcrumbs[]=array($this->data['Course']['title'],array('controller'=>'courses','action'=>'view',$this->data['Course']['id']));
+		$this->breadcrumbs[]=array($this->data['Lecture']['title'],array('action'=>'view',$id));
+		$this->breadcrumbs[]=array(__('Edit',true),array('action'=>'edit',$id));
 	}
 
 	function delete($id = null) {

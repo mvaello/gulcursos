@@ -22,13 +22,9 @@
 			if ($session->check('User'))
 			{
 				$user = $session->read('User');
-				echo "Usuario " . $user['username'] . " | " . $html->link("Salir", "/users/logout");
-				
-				if ($waitingusers > 0)
-				{
-					echo " | ";
-					echo $html->link(" 	¡Hey! ¡Hay usuarios esperando a ser aceptados! ¡Échales un cable!", "/users/accept");
-				}
+				echo "Usuario " . $user['username'] . " | ";
+				echo $html->link(__("manage users",true),array('controller'=>'users','action'=>'index'))." | ";
+				echo $html->link("Salir", "/users/logout");
 			}
 			else
 			{

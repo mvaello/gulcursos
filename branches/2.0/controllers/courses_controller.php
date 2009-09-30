@@ -12,6 +12,8 @@ class CoursesController extends AppController {
 	function index() {
 		$this->Course->recursive = 1;
 		$this->set('courses', $this->paginate());
+
+		$this->breadcrumbs[]=array(__('Courses',true),array('action'=>'index'));
 	}
 
 	function view($id = null) {
@@ -20,7 +22,11 @@ class CoursesController extends AppController {
 			$this->Session->setFlash(__('Invalid Course.', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->set('course', $this->Course->read(null, $id));
+		$course = $this->Course->read(null, $id);
+		$this->set('course', $course);
+
+		$this->breadcrumbs[]=array(__('Courses',true),array('action'=>'index'));
+		$this->breadcrumbs[]=array($course['Course']['title'],array('action'=>'view',$id));
 	}
 
 	function add() {
@@ -33,6 +39,8 @@ class CoursesController extends AppController {
 				$this->Session->setFlash(__('The Course could not be saved. Please, try again.', true));
 			}
 		}
+		$this->breadcrumbs[]=array(__('Courses',true),array('action'=>'index'));
+		$this->breadcrumbs[]=array(__('New course',true),array('action'=>'add'));
 	}
 
 	function edit($id = null) {
@@ -52,6 +60,10 @@ class CoursesController extends AppController {
 			$this->data = $this->Course->read(null, $id);
 		}
 		$this->set('course_title',$this->data['Course']['title']); 
+
+		$this->breadcrumbs[]=array(__('Courses',true),array('action'=>'index'));
+		$this->breadcrumbs[]=array($this->data['Course']['title'],array('action'=>'view',$id));
+		$this->breadcrumbs[]=array(__('Edit',true),array('action'=>'edit',$id));
 	}
 
 	function delete($id = null) {
@@ -76,6 +88,10 @@ class CoursesController extends AppController {
 		$this->set("assistants", ($assisted == "assist"));
 		$this->set('course', $course);
 		$this->pageTitle = $course['Course']['title'];
+
+		$this->breadcrumbs[]=array(__('Courses',true),array('action'=>'index'));
+		$this->breadcrumbs[]=array($course['Course']['title'],array('action'=>'view',$id));
+		$this->breadcrumbs[]=array(__('Calendar',true),array('action'=>'calendar',$id));
 	}
 
 	function close($id){

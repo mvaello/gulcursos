@@ -14,17 +14,20 @@
 		var $helpers = array('Html');
 		var $buffer;   // Array
 		var $str;       // String
-		
-		function CrumbHelper() { // Metodo constructor
-			$this->buffer[] = "<div id='breadcumb'><img src='/img/cms/home.gif' border='0'><a href='/admin/admins/menu'>Home</a>";
-		}
 	
-		function add($titulo, $url=null)   {
-			if(!empty($url)):
-				$this->buffer[] = " >> " . $this->Html->link($titulo, $url);
-			else:
-				$this->buffer[] = " >> " . $titulo;
-			endif;
+		function add($links)   {
+			foreach($links as $link){
+				$limiter="";
+				if($this->buffer){
+					$limiter = " >> ";
+				}
+		
+				if(!empty($link[1])):
+					$this->buffer[] = $limiter . $this->Html->link($link[0], $link[1]);
+				else:
+					$this->buffer[] = $limiter . $link[0];
+				endif;
+			}
 			
 			return true;
 		}
@@ -34,7 +37,7 @@
 				$this->str .= $links;
 			endforeach;
 			
-			$this->str .= "</div>";
+			$this->str = "<div id='breadcrumbs'>".$this->str."</div>";
 			return $this->output($this->str);
 		}
 	}

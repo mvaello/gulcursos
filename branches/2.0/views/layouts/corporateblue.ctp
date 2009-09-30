@@ -18,15 +18,15 @@
 		<!-- the "active" class markes which link will be highlited-->	
 			<ul>
 				<?php if($user): ?>
+					<li><?php echo __('User',true).": {$user['User']['username']}"; ?></li>
+					<li><?php echo $html->link(__('manage users',true),array('controller'=>'users','action'=>'index')); ?></li>
 					<li><?php echo $html->link(__('logout',true),array('controller'=>'users','action'=>'logout')); ?></li>
 				<?php else: ?>
 					<li><?php echo $html->link(__('login',true),array('controller'=>'users','action'=>'login')); ?></li>
 				<?php endif; ?>
 			</ul>
 		</div>
-		<div id='breadcrum'>
-			<?php $crumb->html(); ?>
-		</div>
+
 	<!--- header pic goes below. For each page save an 820px x 240px header picture in info/header-pics and then link to it-->
 		<div id="header-pic">
 			<?php echo $html->image("corporateblue-header.jpg"); ?>
@@ -35,11 +35,9 @@
 	</div>
 		
 	<div id="content-wrap">
-		
 		<div id="content">
 			<?php echo $content_for_layout ?>
 		</div>
-	<!--sfarsit sidebar-->				
 	</div>
 	
 	

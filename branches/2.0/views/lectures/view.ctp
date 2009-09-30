@@ -54,7 +54,7 @@
 			echo $form->input('from');
 			echo $form->hidden('lecture',array('value'=>$lecture['Lecture']['id']));
 			echo $form->label('mark',__('Mark',true));
-			echo $form->select('mark',array('-1'=>__('negative',true),'0'=>__('neutral',true),'1'=>__('positive',true)),array('value'=>0));
+			echo $form->select('mark',array('-1'=>__('negative',true),'0'=>__('neutral',true),'1'=>__('positive',true)),array('value'=>0))."<br />";
 			echo $form->label('comments',__('Comments',true));
 			echo $form->textarea('comments');
 		?>

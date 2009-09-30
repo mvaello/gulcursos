@@ -42,12 +42,18 @@ class AppController extends Controller {
 	var $helpers = array('Html','Form','Widewisse','Crumb');
 
 	function beforeFilter(){
+		$this->breadcrumbs = array();
+		$this->breadcrumbs[] = array(__('Home',true),array('controller'=>'pages','action'=>'display','home'));
 		$config = parse_ini_file("widewisse.ini");
 		$this->set('user',$this->Auth->user());
 		$this->Auth->allow("*");
 		$this->layout = $config['layout'];	
 		Configure::write('Config.language',$config['language']);
 		$this->set('config',$config); 
+	}
+
+	function beforeRender(){
+		$this->set('breadcrumbs',$this->breadcrumbs); 
 	}
 }
 ?>
