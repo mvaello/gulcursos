@@ -19,42 +19,20 @@
 -->
 	<div id="login">
 		<?php 
-			if ($session->check('User'))
+			if ($myuser)
 			{
-				$user = $session->read('User');
-				echo "Usuario " . $user['username'] . " | ";
+				echo $html->link(__("User",true).": {$myuser['User']['username']}",array('controller'=>'users','action'=>'view',$myuser['User']['id']))." | ";
 				echo $html->link(__("manage users",true),array('controller'=>'users','action'=>'index'))." | ";
 				echo $html->link("Salir", "/users/logout");
 			}
 			else
 			{
 				echo $html->link("Login", "/users/login");
-//				echo " | &iquest;No tienes cuenta?  " . $html->link("¡Hazte con una!", "/users/add");
 			}
 		?>		
 	</div>
 	<div id="navigation">
-		<?php
-			$out = $html->link("Entrada", "/");
-			
-			if (isset($navcourse))
-			{
-				$out .= " > " . $html->link("Todas las jornadas", "/courses");
-				
-				if ($navcourse != "index")
-				{
-					$out .= " > ";
-					$out .= $html->link($navcourse['title'], "/courses/view/".$navcourse['id']);
-				}
-				
-				if (isset($navlecture))
-				{
-					$out .= " > ";
-					$out .= $html->link($navlecture['title'], "/lectures/view/".$navlecture['id']);					
-				}
-			}
-			echo $out;
-		?>
+		<?php $crumb->add($breadcrumbs); echo $crumb->html(); ?>
 	</div>
 </div>
 

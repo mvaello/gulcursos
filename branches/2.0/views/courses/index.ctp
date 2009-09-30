@@ -14,7 +14,7 @@ echo $paginator->counter(array(
 	<th><?php echo $paginator->sort('description');?></th>
 	<th><?php echo __('Courses');?></th>
 	<th><?php echo __('Status');?></th>
-	<?php if($user): ?>
+	<?php if($myuser): ?>
 		<th class="actions"><?php __('Actions');?></th>
 	<?php endif; ?>
 </tr>
@@ -35,7 +35,7 @@ foreach ($courses as $course):
 		<?php else: ?>
 		<td class='closed'>Cerrada</td>
 		<?php endif; ?>
-		<?php if($user): ?>
+		<?php if($myuser): ?>
 		<td class="actions">
 			<span><?php echo $html->link("Edit","/courses/edit/{$course['Course']['id']}"); ?></span>
 
@@ -70,7 +70,7 @@ foreach ($courses as $course):
 	<div> | <?php echo $paginator->numbers();?> | </div>
 	<?php echo $paginator->next(__('next', true).' >>', array(), null, array('class'=>'disabled'));?>
 </div>
-<?php if($user): ?>
+<?php if($myuser): ?>
 <div class="actions">
 	<?php echo $html->link(__('New Course', true), array('action'=>'add')); ?>
 </div>

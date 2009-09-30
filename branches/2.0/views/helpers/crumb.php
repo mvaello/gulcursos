@@ -37,7 +37,7 @@
 				$this->str .= $links;
 			endforeach;
 			
-			$this->str = "<div id='breadcrumbs'>".$this->str."</div>";
+			$this->str = "<div id='breadcrumbs'><span>".$this->str."</span></div>";
 			return $this->output($this->str);
 		}
 	}

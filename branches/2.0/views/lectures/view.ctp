@@ -23,7 +23,7 @@
 		</ul>		
 	</div>
 	<?php echo $html->link(__("Return to course",true), "/courses/view/{$lecture['Course']['id']}"); ?>
-	<?php if($user): ?>
+	<?php if($myuser): ?>
 		| <?php echo $html->link(__("Edit this lecture",true), "/lectures/edit/{$lecture['Lecture']['id']}"); ?>
 	<?php endif; ?>
 
@@ -71,7 +71,7 @@
 			<p>mark: <?php echo $comment['mark']; ?></p>
 		</div>
 	</div>
-	<?php if($user): ?>
+	<?php if($myuser): ?>
 	<div class='deletecomment'><?php echo $html->link(__('Delete',true),array('controller'=>'comments','action'=>'delete',$comment['id']),null,__('Are you sure you want to delete this comment?',true)); ?></div>
 	<?php endif; ?>
 	<?php endforeach; ?>

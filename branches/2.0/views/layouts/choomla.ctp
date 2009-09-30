@@ -24,8 +24,8 @@
 
 			<div id="logindiv">
 				<ul id='login'>
-					<?php if($user): ?>
-						<li><?php echo __('User',true).": {$user['User']['username']}"; ?></li>
+					<?php if($myuser): ?>
+						<li><?php echo $html->link(__('User',true).": {$myuser['User']['username']}",array('controller'=>'users','action'=>'view',$myuser['User']['id'])); ?></li>
 						<li><?php echo $html->link(__('manage users',true),array('controller'=>'users','action'=>'index')); ?></li>
 						<li><?php echo $html->link(__('logout',true),array('controller'=>'users','action'=>'logout')); ?></li>
 					<?php else: ?>

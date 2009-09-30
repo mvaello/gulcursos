@@ -731,9 +731,10 @@ height:65px;
 text-transform:none;
 }
 
-#breadcrumbs a:link,#breadcrumbs a:visited {
-#background:#5e687c;
+#breadcrumbs a:link, #breadcrumbs a:visited {
+/*background:#5e687c;*/
 color:#fff;
+text-decoration:none;
 }
 
 #breadcrumbs span {
@@ -742,9 +743,9 @@ font-size:0.9em;
 padding:0;
 }
 
-#breadcrumbs span a:hover,#breadcrumbs span a:active,#breadcrumbs span a:focus {
-background:#7b6a61;
-color:#fff;
+#breadcrumbs span a:hover, #breadcrumbs span a:active, #breadcrumbs span a:focus {
+background:transparent; 
+color:#000;
 text-decoration:none;
 }
 

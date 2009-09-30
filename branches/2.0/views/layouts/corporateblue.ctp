@@ -17,8 +17,8 @@
 		<div id="nav">
 		<!-- the "active" class markes which link will be highlited-->	
 			<ul>
-				<?php if($user): ?>
-					<li><?php echo __('User',true).": {$user['User']['username']}"; ?></li>
+				<?php if($myuser): ?>
+					<li><?php echo $html->link(__('User',true).": {$myuser['User']['username']}",array('controller'=>'users','action'=>'view',$myuser['User']['id'])); ?></li>
 					<li><?php echo $html->link(__('manage users',true),array('controller'=>'users','action'=>'index')); ?></li>
 					<li><?php echo $html->link(__('logout',true),array('controller'=>'users','action'=>'logout')); ?></li>
 				<?php else: ?>
@@ -31,6 +31,8 @@
 		<div id="header-pic">
 			<?php echo $html->image("corporateblue-header.jpg"); ?>
 		</div>
+
+		<?php $crumb->add($breadcrumbs); echo $crumb->html(); ?>
 		
 	</div>
 		

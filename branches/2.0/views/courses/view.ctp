@@ -23,7 +23,7 @@
 		<th><?php __('Votes and Comments'); ?></th>
 		<th><?php __('Score'); ?></th>
 		<th><?php __('Confirmed pupils'); ?></th>
-		<?php if($user): ?>
+		<?php if($myuser): ?>
 			<th><?php __('Actions'); ?></th>
 		<?php endif; ?>
 	</tr>
@@ -45,7 +45,7 @@
 			<td><?php echo $widewisse->votes($lecture);?></td>
 			<td><?php echo $widewisse->marks($lecture);?></td>
 			<td><?php echo count($lecture['Pupil']); ?></td>
-			<?php if($user): ?>
+			<?php if($myuser): ?>
 			<td class="actions">
 				<?php echo $html->link(__('Edit', true), array('controller'=> 'lectures', 'action'=>'edit', $lecture['id'])); ?>
 				<?php echo $html->link(__('Delete', true), array('controller'=> 'lectures', 'action'=>'delete', $lecture['id']), null, sprintf(__('Are you sure you want to delete %s?', true), $lecture['title'])); ?>
