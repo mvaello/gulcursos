@@ -6,7 +6,8 @@
 		echo $form->input('username');
 		echo $form->input('password');
 		echo $form->input('email');
-		echo $form->input('accepted');
+		echo $form->label('accepted',__('Accepted',true));
+		echo $form->checkbox('accepted');
 	?>
 <?php echo $form->end('Submit');?>
 </div>

@@ -10,7 +10,6 @@ echo $paginator->counter(array(
 <tr>
 	<th><?php echo $paginator->sort('id');?></th>
 	<th><?php echo $paginator->sort('username');?></th>
-	<th><?php echo $paginator->sort('password');?></th>
 	<th><?php echo $paginator->sort('email');?></th>
 	<th><?php echo $paginator->sort('accepted');?></th>
 	<th class="actions"><?php __('Actions');?></th>
@@ -31,13 +30,10 @@ foreach ($users as $user):
 			<?php echo $user['User']['username']; ?>
 		</td>
 		<td>
-			<?php echo $user['User']['password']; ?>
-		</td>
-		<td>
 			<?php echo $user['User']['email']; ?>
 		</td>
 		<td>
-			<?php echo $user['User']['accepted']; ?>
+			<?php if($user['User']['accepted']==1){ __('Yes'); }else{ __('No'); } ?>
 		</td>
 		<td class="actions">
 			<?php echo $html->link(__('View', true), array('action'=>'view', $user['User']['id'])); ?>
@@ -54,7 +50,5 @@ foreach ($users as $user):
 	<?php echo $paginator->next(__('next', true).' >>', array(), null, array('class'=>'disabled'));?>
 </div>
 <div class="actions">
-	<ul>
-		<li><?php echo $html->link(__('New User', true), array('action'=>'add')); ?></li>
-	</ul>
+	<?php echo $html->link(__('New User', true), array('action'=>'add')); ?>
 </div>
