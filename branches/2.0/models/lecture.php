@@ -43,6 +43,7 @@ class Lecture extends AppModel
                                'finderQuery'   => ''
                          )
                   );
+
 }
 
 ?>

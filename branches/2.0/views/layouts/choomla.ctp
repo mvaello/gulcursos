@@ -52,6 +52,7 @@
 
 
 		<div id="contentarea2"> 
+			<?php $session->flash(); ?>
 			<?php echo $content_for_layout ?>
 		</div>
 	<!--sfarsit sidebar-->				

@@ -1,18 +1,39 @@
 <?php
 	class WidewisseHelper extends AppHelper{
-		function votes($lecture){
-			$total_votes = count($lecture['Vote']);
-			if($total_votes==0){ return ""; }
+		function votes($lecture,$with_zero=false){
+			$total_votes = 0;
+			if(isset($lecture['Vote'])){
+				$total_votes = count($lecture['Vote']);
+			}
+			if($total_votes==0 && !$with_zero){ return ""; }
 			else{ return $total_votes; }
 		}	
 
+		function votesclass($lecture){
+			$votes = $this->votes($lecture);
+			if($marks<0){ return "bad"; }
+			elseif($marks>0){ return "good"; }
+			else{ return "zero"; }
+		}
+
 		function marks($lecture){
 			$totalMark=0;
-			foreach($lecture['Vote'] as $vote) {
-				$totalMark += $vote['mark'];
+			if(isset($lecture['Vote'])){
+				foreach($lecture['Vote'] as $vote) {
+					$totalMark += $vote['mark'];
+				}
 			}
 			if($totalMark==0){ return ''; }
 			else{ return $totalMark; }
+		}
+
+		function comments($lecture){
+			$totalComments=0;
+			if(isset($lecture['Comment'])){
+				$totalComments = count($lecture['Comment']);
+			}
+			if($totalComments==0){ return ''; }
+			else{ return $totalComments; }
 		}
 
 		function markclass($lecture){
@@ -23,7 +44,10 @@
 		}
 
 		function pupils($lecture){
-			$total_pupils = $count($lectoure['Pupil']);
+			$total_pupils = 0;
+			if(isset($lecture['Pupil'])){
+				$total_pupils = count($lecture['Pupil']);
+			}
 			if($total_pupils==0){ return ""; }
 			else{ return $total_pupils; }
 		}

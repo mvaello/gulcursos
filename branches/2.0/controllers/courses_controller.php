@@ -1,8 +1,30 @@
 <?php
+
+function vote_sorter_asc($a,$b){
+	if(count($a['Vote'])==count($b['Vote'])){
+		return 0;
+	}elseif(count($a['Vote'])>count($b['Vote'])){
+		return 1;
+	}else{
+		return -1;
+	}
+}
+
+function vote_sorter_desc($a,$b){
+	if(count($a['Vote'])==count($b['Vote'])){
+		return 0;
+	}elseif(count($a['Vote'])<count($b['Vote'])){
+		return 1;
+	}else{
+		return -1;
+	}
+}
+
 class CoursesController extends AppController {
 
 	var $name = 'Courses';
 	var $helpers = array('Html', 'Form','Time');
+	var $uses = array('Course','Lecture');
 
 	function beforeFilter() {
 	        $this->Auth->allow('index','view','calendar');
@@ -16,13 +38,24 @@ class CoursesController extends AppController {
 		$this->breadcrumbs[]=array(__('Courses',true),array('action'=>'index'));
 	}
 
-	function view($id = null) {
+	function view($id = null,$course_votes_order=null) {
 		$this->Course->recursive = 2;
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid Course.', true));
 			$this->redirect(array('action'=>'index'));
 		}
+		$this->Lecture->recursive = 2;
 		$course = $this->Course->read(null, $id);
+
+		$lectures = $this->paginate('Lecture',array('Course.id'=>$id));
+
+		if($course_votes_order=='asc'){
+			usort($lectures,'vote_sorter_asc');
+		}elseif($course_votes_order=='desc'){
+			usort($lectures,'vote_sorter_desc');
+		}
+
+		$this->set('lectures',$lectures);
 		$this->set('course', $course);
 
 		$this->breadcrumbs[]=array(__('Courses',true),array('action'=>'index'));

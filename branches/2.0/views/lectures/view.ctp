@@ -3,11 +3,10 @@
 	<div id='shortdescription'>
 		<?php echo $lecture['Lecture']['briefdescription']; ?>
 	</div>
-	<?php $session->flash(); ?>
 	<div id='description'> 
 		<div id='mark'><div class='title'>Puntuaci&oacute;n</div>
 		<div class='<?php echo $widewisse->markclass($lecture); ?>'>
-			<?php echo $widewisse->marks($lecture); ?></div>
+			<?php echo $widewisse->votes($lecture,true); ?></div>
 		</div>
 		<?php echo $lecture['Lecture']['description']; ?>
 		<ul>
@@ -18,7 +17,7 @@
 			<li> <strong> Aula: </strong><?php echo $lecture['Lecture']['room']; ?></li>
 			<li> <strong> Conocimientos previos: </strong><?php echo $lecture['Lecture']['suggestedskills']; ?></li>
 			<li> <strong> Nivel (1 = b&aacute;sico, 5 = dif&iacute;cil): </strong><?php echo $lecture['Lecture']['level']; ?></li>
-			<li> <strong> Referencias: </strong> <?php echo $html->link($lecture['Lecture']['referencesurl']); ?></li>
+			<li> <strong> Referencias: </strong> <?php if($lecture['Lecture']['referencesurl']){echo $html->link($lecture['Lecture']['referencesurl']);} ?></li>
 			<li> <strong> Asistido por: </strong> <?php echo $lecture['Lecture']['assistedby']; ?></li>
 		</ul>		
 	</div>
