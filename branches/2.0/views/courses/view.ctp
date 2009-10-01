@@ -62,6 +62,12 @@ echo $paginator->counter(array(
 		</tr>
 		<?php endforeach; ?>
 	</table>
+</div>
+<div class="paging">
+	<?php echo $paginator->prev('<< '.__('previous', true), array(), null, array('class'=>'disabled'));?>
+	<div> | <?php echo $paginator->numbers();?> | </div>
+	<?php echo $paginator->next(__('next', true).' >>', array(), null, array('class'=>'disabled'));?>
+</div>
 
 	<?php if($course['Course']['proposals']): ?>
 		<div class='proposal'>
