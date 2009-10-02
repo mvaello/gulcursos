@@ -25,9 +25,10 @@ class CoursesController extends AppController {
 	var $name = 'Courses';
 	var $helpers = array('Html', 'Form','Time');
 	var $uses = array('Course','Lecture');
+	var $components = array('Session','Captcha');
 
 	function beforeFilter() {
-	        $this->Auth->allow('index','view','calendar');
+	        $this->Auth->allow('index','view','calendar','captcha');
 		parent::beforeFilter();
 	}
 
@@ -36,6 +37,10 @@ class CoursesController extends AppController {
 		$this->set('courses', $this->paginate());
 
 		$this->breadcrumbs[]=array(__('Courses',true),array('action'=>'index'));
+	}
+
+	function captcha(){
+		$this->Captcha->image();
 	}
 
 	function view($id = null,$course_votes_order=null) {
