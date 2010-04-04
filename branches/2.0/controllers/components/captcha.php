@@ -22,7 +22,7 @@ class CaptchaComponent extends Object
         $oVisualCaptcha = new PhpCaptcha($aFonts, 200, 60);
         $oVisualCaptcha->UseColour(true);
         //$oVisualCaptcha->SetOwnerText('Source: '.FULL_BASE_URL);
-        $oVisualCaptcha->SetNumChars(6);
+        $oVisualCaptcha->SetNumChars(5);
         $oVisualCaptcha->Create();
     }
     
@@ -31,9 +31,9 @@ class CaptchaComponent extends Object
             $userCode = strtoupper($userCode);
         }
         
-        if (!empty($_SESSION[CAPTCHA_SESSION_ID]) && $userCode == $_SESSION[CAPTCHA_SESSION_ID]) {
+        if (!empty($_SESSION['php_captcha']) && $userCode == $_SESSION['php_captcha']) {
             // clear to prevent re-use
-            unset($_SESSION[CAPTCHA_SESSION_ID]);
+            unset($_SESSION['php_captcha']);
             
             return true;
         }

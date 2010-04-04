@@ -3,6 +3,7 @@ class CommentsController extends AppController {
 
 	var $name = 'Comments';
 	var $helpers = array('Html', 'Form');
+	var $components = array('Captcha');
 
 	function beforeFilter() {
 	        $this->Auth->allow('view');
@@ -12,13 +13,18 @@ class CommentsController extends AppController {
 	function add() {
 		$this->data['Comment']['datetime'] = date('Y-m-d H:i:s', mktime());
 		if (!empty($this->data)) {
-			$this->Comment->create();
-			if ($this->Comment->save($this->data)) {
-				$this->Session->setFlash(__('The Comment has been saved', true));
+			if($this->myuser===null && !$this->Captcha->check($this->data['Comment']['captcha'])){
+				$this->Session->setFlash(__('Invalid Captcha.', true));
 				$this->redirect(array('controller'=>'lectures','action'=>'view',$this->data['Comment']['lecture']));
-			} else {
-				$this->Session->setFlash(__('The Comment could not be saved. Please, try again.', true));
-			}
+            }else{
+			    $this->Comment->create();
+			    if ($this->Comment->save($this->data)) {
+			    	$this->Session->setFlash(__('The Comment has been saved', true));
+			    	$this->redirect(array('controller'=>'lectures','action'=>'view',$this->data['Comment']['lecture']));
+			    } else {
+			    	$this->Session->setFlash(__('The Comment could not be saved. Please, try again.', true));
+			    }
+            }
 		}
 		$lectures = $this->Comment->Lecture->find('list');
 		$this->set(compact('lectures'));

@@ -45,7 +45,8 @@ class AppController extends Controller {
 		$this->breadcrumbs = array();
 		$this->breadcrumbs[] = array(__('Home',true),array('controller'=>'pages','action'=>'display','home'));
 		$config = parse_ini_file("widewisse.ini");
-		$this->set('myuser',$this->Auth->user());
+		$this->myuser=$this->Auth->user();
+		$this->set('myuser',$this->myuser);
 		$this->Auth->allow("*");
 		$this->layout = $config['layout'];	
 		Configure::write('Config.language',$config['language']);

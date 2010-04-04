@@ -84,7 +84,7 @@ echo $paginator->counter(array(
 					echo $form->input('briefdescription');
 					echo $form->input('captcha');
 				?>
-				<img src="<?php echo $html->url('/courses/captcha'); ?>" /> 
+				<img id='captcha' src="<?php echo $html->url('/courses/captcha'); ?>" /> 
 			<?php echo $form->end('Submit');?>
 			</div>
 		</p>

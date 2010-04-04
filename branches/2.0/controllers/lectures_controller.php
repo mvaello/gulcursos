@@ -4,10 +4,15 @@ class LecturesController extends AppController {
 	var $name = 'Lectures';
 	var $helpers = array('Html', 'Form');
 	var $uses = array('Lecture','Course');
+	var $components = array('Captcha');
 
 	function beforeFilter() {
-	        $this->Auth->allow('view','add');
+	        $this->Auth->allow('view','add','captcha');
 		parent::beforeFilter();
+	}
+
+	function captcha(){
+		$this->Captcha->image();
 	}
 
 	function view($id = null) {
@@ -28,16 +33,22 @@ class LecturesController extends AppController {
 		$this->breadcrumbs[]=array($lecture['Lecture']['title'],array('action'=>'view',$lecture['Lecture']['id']));
 	}
 
-	function add($course_id) {
+	function add() {
 		if (!empty($this->data)) {
-			$this->Lecture->create();
-			if ($this->Lecture->save($this->data)) {
-				$this->Session->setFlash(__('The Lecture has been saved', true));
-				$this->redirect(array('action'=>'view',$this->Lecture->id));
-			} else {
-				$this->Session->setFlash(__('The Lecture could not be saved. Please, try again.', true));
+			if($this->myuser===null && !$this->Captcha->check($this->data['Lecture']['captcha'])){
+				$this->Session->setFlash(__('Invalid Captcha.', true));
+				$this->redirect(array('controller'=>'courses','action'=>'view',$this->data['Lecture']['course']));
+			}else{
+				$this->Lecture->create();
+				if ($this->Lecture->save($this->data)) {
+					$this->Session->setFlash(__('The Lecture has been saved', true));
+					$this->redirect(array('action'=>'view',$this->Lecture->id));
+				} else {
+					$this->Session->setFlash(__('The Lecture could not be saved. Please, try again.', true));
+				}
 			}
 		}
+        $course_id = $this->data['Lecture']['course'];
 		$this->set('course_id',$course_id);
 		$course = $this->Course->read(null,$course_id);
 		$courses = $this->Lecture->Course->find('list');
@@ -86,6 +97,5 @@ class LecturesController extends AppController {
 			$this->redirect(array('controller'=>'courses','action'=>'view',$lecture['Course']['id']));
 		}
 	}
-
 }
 ?>
