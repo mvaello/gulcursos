@@ -26,9 +26,11 @@
 		| <?php echo $html->link(__("Edit this lecture",true), "/lectures/edit/{$lecture['Lecture']['id']}"); ?>
 	<?php endif; ?>
 
-    <div id='captcha'>
-		<h2>Captcha:</h2> <img src="<?php echo $html->url('/lectures/captcha'); ?>" /> 
-    </div>
+    <?php if(!$myuser): ?>
+        <div id='captcha'>
+	    	<h2>Captcha:</h2> <img src="<?php echo $html->url('/lectures/captcha'); ?>" /> 
+        </div>
+    <?php endif; ?>
 
 	<?php if(($lecture['Course']['closed'] == 0) && ($lecture['Course']['votes'] == 1) && ($canVote)): ?>
         <div id='vote_form'>
@@ -47,7 +49,9 @@
 		
 		<?php echo $form->create('Vote');?>
 		<?php echo $form->hidden('lecture',array('value'=>$lecture['Lecture']['id'])); ?>
-		<?php echo $form->input('captcha'); ?>
+        <?php if(!$myuser): ?>
+	    	<?php echo $form->input('captcha'); ?>
+        <?php endif; ?>
 		<?php echo $form->end('Vote');?>
         </div>
 	<?php endif; ?>
@@ -63,7 +67,7 @@
 			echo $form->select('mark',array('-1'=>__('negative',true),'0'=>__('neutral',true),'1'=>__('positive',true)),array('value'=>0))."<br />";
 			echo $form->label('comments',__('Comments',true));
 			echo $form->textarea('comments');
-		    echo $form->input('captcha');
+            if(!$myuser){ echo $form->input('captcha'); }
 		?>
 	<?php echo $form->end('Comment');?>
     </div>
