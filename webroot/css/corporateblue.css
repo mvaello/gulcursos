@@ -370,3 +370,25 @@ div.proposal label{
 .clear{
     clear: both;
 }
+
+#login_form{
+    padding: 10px;
+    border: 1px solid #bbbbbb;
+    width: 350px;
+    margin: auto;
+}
+
+#login_form h1{
+    text-align: center;
+}
+
+#login_form div.submit{
+    text-align: right;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+#login_form div.submit input{
+    border: 1px solid #bbbbbb;
+    background: #eeeeee;
+}
