@@ -1,4 +1,3 @@
-
 <div class="centered">
 	<br/>
 	<p> 
