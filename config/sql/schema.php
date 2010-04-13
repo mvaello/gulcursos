@@ -1,6 +1,6 @@
 <?php 
 /* SVN FILE: $Id$ */
-/* Widewisse schema generated on: 2010-04-07 21:04:08 : 1270670288*/
+/* Widewisse schema generated on: 2010-04-12 12:04:27 : 1271066848*/
 class WidewisseSchema extends CakeSchema {
 	var $name = 'Widewisse';
 
@@ -44,6 +44,7 @@ class WidewisseSchema extends CakeSchema {
 		'endingtime' => array('type' => 'time', 'null' => true, 'default' => NULL),
 		'assistedby' => array('type' => 'string', 'null' => true, 'default' => NULL, 'length' => 30),
 		'publishedon' => array('type' => 'datetime', 'null' => true, 'default' => NULL),
+		'level' => array('type' => 'integer', 'null' => true, 'default' => NULL),
 		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1))
 	);
 	var $pupils = array(

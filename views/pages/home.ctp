@@ -1,4 +1,3 @@
-
 <div class="centered">
 	<br/>
 	<p> 
@@ -17,8 +16,8 @@
 		</p>
 
 		<p>
-			Si quieres ayudar en la organización apúntate
-			<?php echo $html->link("al grupo de organización de cursos del GUL.","http://wiki.gul.es/doku.php?id=gul-cursos"); ?>
+			Si quieres colaborar en la organización haz click
+			<?php echo $html->link("aqui.",$config['collaborate_link']); ?>
 		</p>
 		
 		<p>
