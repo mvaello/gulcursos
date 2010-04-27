@@ -33,7 +33,7 @@ class LecturesController extends AppController {
 		$this->breadcrumbs[]=array($lecture['Lecture']['title'],array('action'=>'view',$lecture['Lecture']['id']));
 	}
 
-	function add() {
+	function add($course_id=null) {
 		if (!empty($this->data)) {
 			if($this->myuser===null && !$this->Captcha->check($this->data['Lecture']['captcha'])){
 				$this->Session->setFlash(__('Invalid Captcha.', true));
@@ -48,7 +48,9 @@ class LecturesController extends AppController {
 				}
 			}
 		}
-        $course_id = $this->data['Lecture']['course'];
+        if(is_null($course_id)){
+            $course_id = $this->data['Lecture']['course'];
+        }
 		$this->set('course_id',$course_id);
 		$course = $this->Course->read(null,$course_id);
 		$courses = $this->Lecture->Course->find('list');
