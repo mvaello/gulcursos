@@ -11,7 +11,7 @@ class CaptchaComponent extends Object
 
     function image(){
         
-        $imagesPath = 'vendors'.DS.'phpcaptcha'.DS.'/fonts/';
+        $imagesPath = '..'.DS.'vendors'.DS.'phpcaptcha'.DS.'/fonts/';
         
         $aFonts = array(
             $imagesPath.'VeraBd.ttf',
