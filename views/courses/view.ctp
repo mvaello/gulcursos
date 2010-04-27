@@ -94,6 +94,8 @@ echo $paginator->counter(array(
 	<?php endif;?>
 	</div>
 	<?php echo $html->link("Return to courses", "/courses/"); ?>
-	|
-	<?php echo $html->link("New lecture", "/lectures/add/{$course['Course']['id']}/{$course['Course']['title']}"); ?>
+	<?php if($myuser): ?>
+	    |
+	    <?php echo $html->link("New lecture", "/lectures/add/{$course['Course']['id']}"); ?>
+    <?php endif; ?>
 </div>
