@@ -92,7 +92,7 @@ echo $paginator->counter(array(
 		</p>
 		</div>
 	<?php endif;?>
-	</div>
+
 	<?php echo $html->link("Return to courses", "/courses/"); ?>
 	<?php if($myuser): ?>
 	    |
