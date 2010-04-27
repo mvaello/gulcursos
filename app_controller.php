@@ -41,8 +41,9 @@ class AppController extends Controller {
 
 	var $helpers = array('Html','Form','Widewisse','Crumb');
 
+	var $breadcrumbs = array();
+
 	function beforeFilter(){
-		$this->breadcrumbs = array();
 		$this->breadcrumbs[] = array(__('Home',true),array('controller'=>'pages','action'=>'display','home'));
 		$config = parse_ini_file("widewisse.ini");
 		$this->myuser=$this->Auth->user();
