@@ -78,11 +78,11 @@ body.contentpane {
  * details.
  */
 
-*
+/**
 {
    margin: 0;
    padding: 0;
-}
+}*/
 
 /*body {
    background: #F2E3ED;
@@ -2301,3 +2301,6 @@ dd {
 	vertical-align: top;
 }
 
+table.calendar tbody tr td {
+	vertical-align:top;
+}

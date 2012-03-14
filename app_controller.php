@@ -44,6 +44,7 @@ class AppController extends Controller {
 	var $breadcrumbs = array();
 
 	function beforeFilter(){
+		Security::setHash('md5');
 		$this->breadcrumbs[] = array(__('Home',true),array('controller'=>'pages','action'=>'display','home'));
 		$config = parse_ini_file("widewisse.ini");
 		$this->myuser=$this->Auth->user();

@@ -68,8 +68,9 @@ class LecturesController extends AppController {
 		}
 		if (!empty($this->data)) {
 			if ($this->Lecture->save($this->data)) {
+				$lecture = $this->Lecture->read('course',$this->data['Lecture']['id']);
 				$this->Session->setFlash(__('The Lecture has been saved', true));
-				$this->redirect(array('action'=>'index'));
+				$this->redirect(array('controller'=>'courses','action'=>'view',$lecture['Lecture']['course']));
 			} else {
 				$this->Session->setFlash(__('The Lecture could not be saved. Please, try again.', true));
 			}

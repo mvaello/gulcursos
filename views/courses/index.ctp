@@ -36,27 +36,27 @@ foreach ($courses as $course):
 		<?php endif; ?>
 		<?php if($myuser): ?>
 		<td class="actions">
-			<span><?php echo $html->link("Edit","/courses/edit/{$course['Course']['id']}"); ?></span>
+			<span><?php echo $html->link(__("Edit",true),"/courses/edit/{$course['Course']['id']}"); ?></span>
 
 			<br />
 			<?php if($course['Course']['closed']==0): ?>
-				<span class='open'><?php echo $html->link("Close","/courses/close/{$course['Course']['id']}"); ?></span>
+				<span class='open'><?php echo $html->link(__("Close",true),"/courses/close/{$course['Course']['id']}"); ?></span>
 
 				<br />
 
 				<?php if($course['Course']['proposals']==0): ?>
-					<span class='closed'><?php echo $html->link("Allow proposals","/courses/allowproposals/{$course['Course']['id']}"); ?></span>
+					<span class='closed'><?php echo $html->link(__("Allow proposals",true),"/courses/allowproposals/{$course['Course']['id']}"); ?></span>
 				<?php else: ?>
-					<span class='open'><?php echo $html->link("Deny proposals","/courses/denyproposals/{$course['Course']['id']}"); ?></span>
+					<span class='open'><?php echo $html->link(__("Deny proposals",true),"/courses/denyproposals/{$course['Course']['id']}"); ?></span>
 				<?php endif; ?>
 				<br />
 				<?php if($course['Course']['votes']==0): ?>
-					<span class='closed'><?php echo $html->link("Allow votes","/courses/allowvotes/{$course['Course']['id']}"); ?></span>
+					<span class='closed'><?php echo $html->link(__("Allow votes",true),"/courses/allowvotes/{$course['Course']['id']}"); ?></span>
 				<?php else: ?>
-					<span class='open'><?php echo $html->link("Deny votes","/courses/denyvotes/{$course['Course']['id']}"); ?></span>
+					<span class='open'><?php echo $html->link(__("Deny votes",true),"/courses/denyvotes/{$course['Course']['id']}"); ?></span>
 				<?php endif; ?>
 			<?php else: ?>
-				<span class='closed'><?php echo $html->link("Open","/courses/open/{$course['Course']['id']}"); ?></span>
+				<span class='closed'><?php echo $html->link(__("Open",true),"/courses/open/{$course['Course']['id']}"); ?></span>
 			<?php endif; ?>
 		</td>
 		<?php endif; ?>

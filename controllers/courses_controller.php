@@ -26,9 +26,10 @@ class CoursesController extends AppController {
 	var $helpers = array('Html', 'Form','Time');
 	var $uses = array('Course','Lecture');
 	var $components = array('Session','Captcha');
+	var $paginate = array('limit'=>25);
 
 	function beforeFilter() {
-	        $this->Auth->allow('index','view','calendar','captcha');
+	        $this->Auth->allow('index','view','calendar','captcha','ics');
 		parent::beforeFilter();
 	}
 
@@ -206,6 +207,18 @@ class CoursesController extends AppController {
 			}else{
 				$this->Session->setFlash(__('Error: Votes not allowed', true));
 			}
+			$this->redirect(array('action'=>'index'));
+		}
+	}
+
+	function ics($id = null)
+	{
+		if ($id) {
+			$course = $this->Course->findAll(array('id' => $id), null, null, null, null, 1);
+			$this->set("course", $course);
+			$this->render('ics','ics');
+		} else {
+			$this->Session->setFlash(__('Error: Invalid course', true));
 			$this->redirect(array('action'=>'index'));
 		}
 	}

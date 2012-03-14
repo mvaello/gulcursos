@@ -38,7 +38,7 @@ class WidewisseSchema extends CakeSchema {
 		'description' => array('type' => 'text', 'null' => true, 'default' => NULL),
 		'suggestedskills' => array('type' => 'text', 'null' => true, 'default' => NULL),
 		'course' => array('type' => 'integer', 'null' => false, 'default' => NULL),
-		'referencesurl' => array('type' => 'string', 'null' => true, 'default' => NULL, 'length' => 100),
+		'referencesurl' => array('type' => 'string', 'null' => true, 'default' => NULL, 'length' => 255),
 		'date' => array('type' => 'date', 'null' => true, 'default' => NULL),
 		'startingtime' => array('type' => 'time', 'null' => true, 'default' => NULL),
 		'endingtime' => array('type' => 'time', 'null' => true, 'default' => NULL),

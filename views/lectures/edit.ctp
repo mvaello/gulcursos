@@ -13,9 +13,9 @@
 		echo $form->select('level',array('1'=>__('very easy',true),'2'=>__('easy',true),'3'=>__('normal',true),'4'=>__('hard',true),'5'=>__('very hard',true)));
 		echo $form->input('referencesurl');
 		echo $form->input('room');
-		echo $form->input('date');
-		echo $form->input('startingtime');
-		echo $form->input('endingtime');
+		echo $form->input('date',array('empty'=>true));
+		echo $form->input('startingtime',array('empty'=>true));
+		echo $form->input('endingtime',array('empty'=>true));
 	?>
 	</fieldset>
 <?php echo $form->end('Save');?>

@@ -5,5 +5,5 @@
 		echo $form->input('title');
 		echo $form->input('description');
 	?>
-<?php echo $form->end('Submit');?>
+<?php echo $form->end(__('Add',true));?>
 </div>

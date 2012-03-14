@@ -12,7 +12,7 @@
 		echo $form->label('votes',__('Votes',true));
 		echo $form->checkbox('votes');
 	?>
-<?php echo $form->end('Submit');?>
+<?php echo $form->end(__('Edit',true));?>
 </div>
 <div class="actions">
 	<?php echo $html->link(__('Return to courses list', true), array('action'=>'index'));?></li>

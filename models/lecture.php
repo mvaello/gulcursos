@@ -3,6 +3,8 @@
 class Lecture extends AppModel
 {
 	var $name = "Lecture";
+	var $order = 'Lecture.id DESC';
+	var $limit = 25;
 
 	var $belongsTo = array('Course' =>
                            array('className'  => 'Course',

@@ -10,7 +10,7 @@
 <?php endif; ?>
 
 <?php echo __('Maybe you are interested in see the '); ?>
-<?php echo $html->link("courses calendar.", "/courses/calendar/".$course['Course']['id']);?>
+<?php echo $html->link(__("courses calendar.",true), "/courses/calendar/".$course['Course']['id']);?>
 
 <?php if ($course['Course']['votes'] > 0): ?>
 	<?php echo __('We are in the organization phase, the calendar could not be finished'); ?>
@@ -64,9 +64,9 @@ echo $paginator->counter(array(
 	</table>
 </div>
 <div class="paging">
-	<?php echo $paginator->prev('<< '.__('previous', true), array(), null, array('class'=>'disabled'));?>
+	<?php echo $paginator->prev('<< '.__('previous', true), null, null, array('class'=>'disabled'));?>
 	<div> | <?php echo $paginator->numbers();?> | </div>
-	<?php echo $paginator->next(__('next', true).' >>', array(), null, array('class'=>'disabled'));?>
+	<?php echo $paginator->next(__('next', true).' >>', null, null, array('class'=>'disabled'));?>
 </div>
 
 	<?php if($course['Course']['proposals']): ?>
@@ -87,15 +87,15 @@ echo $paginator->counter(array(
 				    <?php echo $form->input('captcha'); ?>
 				    <img id='captcha' src="<?php echo $html->url('/courses/captcha'); ?>" /> 
                 <?php endif; ?>
-			<?php echo $form->end('Submit');?>
+			<?php echo $form->end(__('Submit',true));?>
 			</div>
 		</p>
 		</div>
 	<?php endif;?>
 
-	<?php echo $html->link("Return to courses", "/courses/"); ?>
+	<?php echo $html->link(__("Return to courses",true), "/courses/"); ?>
 	<?php if($myuser): ?>
 	    |
-	    <?php echo $html->link("New lecture", "/lectures/add/{$course['Course']['id']}"); ?>
+	    <?php echo $html->link(__("New lecture",true), "/lectures/add/{$course['Course']['id']}"); ?>
     <?php endif; ?>
 </div>

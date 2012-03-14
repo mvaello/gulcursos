@@ -1,12 +1,14 @@
 # LANGUAGE translation of CakePHP Application
 # Copyright YEAR NAME <EMAIL@ADDRESS>
-# Generated from file: Revision: 7296 /widewisse2/webroot/test.php
+# Generated from files:
+#  Revision: 6311 /app_controllerphp
+#  Revision: 7296 /webroot/testphp
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2009-09-26 14:07+0200\n"
+"POT-Creation-Date: 2010-09-28 18:29+0200\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -15,514 +17,583 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: /controllers/comments_controller.php:17
+#: /app_controllerphp:48
+msgid "Home"
+msgstr ""
+
+#: /controllers/comments_controllerphp:17
+#: /controllers/lectures_controllerphp:39
+#: /controllers/votes_controllerphp:11
+msgid "Invalid Captcha."
+msgstr ""
+
+#: /controllers/comments_controllerphp:22
 msgid "The Comment has been saved"
 msgstr ""
 
-#: /controllers/comments_controller.php:20
+#: /controllers/comments_controllerphp:25
 msgid "The Comment could not be saved. Please, try again."
 msgstr ""
 
-#: /controllers/comments_controller.php:29
+#: /controllers/comments_controllerphp:35
 msgid "Invalid id for Comment"
 msgstr ""
 
-#: /controllers/comments_controller.php:35
+#: /controllers/comments_controllerphp:41
 msgid "Comment deleted"
 msgstr ""
 
-#: /controllers/courses_controller.php:20;72
-msgid "Invalid Course."
-msgstr ""
-
-#: /controllers/courses_controller.php:30;45
-msgid "The Course has been saved"
-msgstr ""
-
-#: /controllers/courses_controller.php:33;48
-msgid "The Course could not be saved. Please, try again."
-msgstr ""
-
-#: /controllers/courses_controller.php:40
-msgid "Invalid Course"
-msgstr ""
-
-#: /controllers/courses_controller.php:59
-msgid "Invalid id for Course"
-msgstr ""
-
-#: /controllers/courses_controller.php:63
-msgid "Course deleted"
-msgstr ""
-
-#: /controllers/courses_controller.php:86
-msgid "Course closed"
-msgstr ""
-
-#: /controllers/courses_controller.php:88
-msgid "Error: Course not closed"
-msgstr ""
-
-#: /controllers/courses_controller.php:99
-msgid "Course opened"
-msgstr ""
-
-#: /controllers/courses_controller.php:101
-msgid "Error: Course not opened"
-msgstr ""
-
-#: /controllers/courses_controller.php:112
-msgid "Proposals denied"
-msgstr ""
-
-#: /controllers/courses_controller.php:114
-msgid "Error: Proposals not denied"
-msgstr ""
-
-#: /controllers/courses_controller.php:125
-msgid "Proposals allowed"
-msgstr ""
-
-#: /controllers/courses_controller.php:127
-msgid "Error: Proposals not allowed"
-msgstr ""
-
-#: /controllers/courses_controller.php:138
-msgid "Votes denied"
-msgstr ""
-
-#: /controllers/courses_controller.php:140
-msgid "Error: Votes not denied"
-msgstr ""
-
-#: /controllers/courses_controller.php:151
-msgid "Votes allowed"
-msgstr ""
-
-#: /controllers/courses_controller.php:153
-msgid "Error: Votes not allowed"
-msgstr ""
-
-#: /controllers/lectures_controller.php:14
-msgid "Invalid Lecture."
-msgstr ""
-
-#: /controllers/lectures_controller.php:30;48
-msgid "The Lecture has been saved"
-msgstr ""
-
-#: /controllers/lectures_controller.php:33;51
-msgid "The Lecture could not be saved. Please, try again."
-msgstr ""
-
-#: /controllers/lectures_controller.php:43
-msgid "Invalid Lecture"
-msgstr ""
-
-#: /controllers/lectures_controller.php:65
-msgid "Invalid id for Lecture"
-msgstr ""
-
-#: /controllers/lectures_controller.php:70
-msgid "Lecture deleted"
-msgstr ""
-
-#: /controllers/pupils_controller.php:14
-msgid "Invalid Pupil."
-msgstr ""
-
-#: /controllers/pupils_controller.php:24;41
-msgid "The Pupil has been saved"
-msgstr ""
-
-#: /controllers/pupils_controller.php:27;44
-msgid "The Pupil could not be saved. Please, try again."
-msgstr ""
-
-#: /controllers/pupils_controller.php:36
-msgid "Invalid Pupil"
-msgstr ""
-
-#: /controllers/pupils_controller.php:56
-msgid "Invalid id for Pupil"
-msgstr ""
-
-#: /controllers/pupils_controller.php:60
-msgid "Pupil deleted"
-msgstr ""
-
-#: /controllers/users_controller.php:27
-msgid "Invalid User."
-msgstr ""
-
-#: /controllers/users_controller.php:37;52
-msgid "The User has been saved"
-msgstr ""
-
-#: /controllers/users_controller.php:40;55
-msgid "The User could not be saved. Please, try again."
-msgstr ""
-
-#: /controllers/users_controller.php:47
-msgid "Invalid User"
-msgstr ""
-
-#: /controllers/users_controller.php:65
-msgid "Invalid id for User"
-msgstr ""
-
-#: /controllers/users_controller.php:69
-msgid "User deleted"
-msgstr ""
-
-#: /controllers/votes_controller.php:15
-msgid "The Vote has been saved"
-msgstr ""
-
-#: /controllers/votes_controller.php:18
-msgid "The Vote could not be saved. Please, try again."
-msgstr ""
-
-#: /views/courses/add.ctp:2
-msgid "New course"
-msgstr ""
-
-#: /views/courses/calendar.ctp:2
-msgid "Calendar"
-msgstr ""
-
-#: /views/courses/calendar.ctp:4
-msgid "Here you have the courses calendar. If you put the pointer on a ttitle, you can see a tooltip with information, and if you click on, you will see the course page."
-msgstr ""
-
-#: /views/courses/calendar.ctp:8
-msgid "Here you can find the assistants calendar."
-msgstr ""
-
-#: /views/courses/calendar.ctp:13
-#: /views/lectures/add.ctp:23
-#: /views/lectures/edit.ctp:24
-#: /views/lectures/view.ctp:25
-msgid "Return to course"
-msgstr ""
-
-#: /views/courses/edit.ctp:8
-msgid "Closed"
-msgstr ""
-
-#: /views/courses/edit.ctp:10
-msgid "Proposals"
-msgstr ""
-
-#: /views/courses/edit.ctp:12
-#: /views/votes/index.ctp:2
-msgid "Votes"
-msgstr ""
-
-#: /views/courses/edit.ctp:18
-msgid "Return to courses list"
-msgstr ""
-
-#: /views/courses/index.ctp:2;15
+#: /controllers/courses_controllerphp:39;66;80;102;130
+#: /controllers/lectures_controllerphp:31;59;86
+#: /views/courses/indexctp:2;14
 msgid "Courses"
 msgstr ""
 
-#: /views/courses/index.ctp:7
-#: /views/users/index.ctp:6
-#: /views/votes/index.ctp:6
-msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
+#: /controllers/courses_controllerphp:49;122
+msgid "Invalid Course."
 msgstr ""
 
-#: /views/courses/index.ctp:16
-msgid "Status"
+#: /controllers/courses_controllerphp:74;91
+msgid "The Course has been saved"
 msgstr ""
 
-#: /views/courses/index.ctp:18
-#: /views/courses/view.ctp:27
-#: /views/users/index.ctp:16
-#: /views/votes/index.ctp:18
-msgid "Actions"
+#: /controllers/courses_controllerphp:77;94
+msgid "The Course could not be saved. Please, try again."
 msgstr ""
 
-#: /views/courses/index.ctp:69
-#: /views/users/index.ctp:52
-#: /views/votes/index.ctp:60
-msgid "previous"
+#: /controllers/courses_controllerphp:81
+#: /views/courses/addctp:2
+msgid "New course"
 msgstr ""
 
-#: /views/courses/index.ctp:71
-#: /views/users/index.ctp:54
-#: /views/votes/index.ctp:62
-msgid "next"
+#: /controllers/courses_controllerphp:86
+msgid "Invalid Course"
 msgstr ""
 
-#: /views/courses/index.ctp:75
-msgid "New Course"
-msgstr ""
-
-#: /views/courses/view.ctp:2
-msgid "Lectures"
-msgstr ""
-
-#: /views/courses/view.ctp:4
-msgid "These are the proposed speaks for this course. The most voted speaks will be done. If you are interested in any, you can vote it clicking in the speak title."
-msgstr ""
-
-#: /views/courses/view.ctp:6
-msgid "These are the proposet speeks for this course. If you want to know more, click in the title of the speask."
-msgstr ""
-
-#: /views/courses/view.ctp:9
-msgid "Maybe you are interested in see the "
-msgstr ""
-
-#: /views/courses/view.ctp:13
-msgid "We are in the organization phase, the calendar could not be finished"
-msgstr ""
-
-#: /views/courses/view.ctp:20
-msgid "Title"
-msgstr ""
-
-#: /views/courses/view.ctp:21
-msgid "Date"
-msgstr ""
-
-#: /views/courses/view.ctp:22
-msgid "Hour"
-msgstr ""
-
-#: /views/courses/view.ctp:23
-msgid "Votes and Comments"
-msgstr ""
-
-#: /views/courses/view.ctp:24
-msgid "Score"
-msgstr ""
-
-#: /views/courses/view.ctp:25
-msgid "Confirmed pupils"
-msgstr ""
-
-#: /views/courses/view.ctp:50
-#: /views/users/index.ctp:44
-#: /views/votes/index.ctp:52
+#: /controllers/courses_controllerphp:104
+#: /controllers/lectures_controllerphp:89
+#: /controllers/users_controllerphp:71
+#: /views/courses/editctp:15
+#: /views/courses/indexctp:39
+#: /views/courses/viewctp:58
+#: /views/users/indexctp:40
+#: /views/votes/indexctp:52
 msgid "Edit"
 msgstr ""
 
-#: /views/courses/view.ctp:51
-#: /views/lectures/view.ctp:75
-#: /views/users/index.ctp:45
-#: /views/votes/edit.ctp:19
-#: /views/votes/index.ctp:53
-msgid "Delete"
+#: /controllers/courses_controllerphp:109
+msgid "Invalid id for Course"
 msgstr ""
 
-#: /views/courses/view.ctp:51
-msgid "Are you sure you want to delete %s?"
+#: /controllers/courses_controllerphp:113
+msgid "Course deleted"
 msgstr ""
 
-#: /views/layouts/corporateblue.ctp:15
-#: /views/layouts/default.ctp:15
-msgid "Courses made easy"
+#: /controllers/courses_controllerphp:132
+#: /views/courses/calendarctp:2
+msgid "Calendar"
 msgstr ""
 
-#: /views/layouts/corporateblue.ctp:21
-#: /views/layouts/default.ctp:21
-msgid "logout"
+#: /controllers/courses_controllerphp:140
+msgid "Course closed"
 msgstr ""
 
-#: /views/layouts/corporateblue.ctp:23
-#: /views/layouts/default.ctp:23
-msgid "login"
+#: /controllers/courses_controllerphp:142
+msgid "Error: Course not closed"
 msgstr ""
 
-#: /views/lectures/add.ctp:11
-#: /views/lectures/edit.ctp:12
-msgid "Level"
+#: /controllers/courses_controllerphp:153
+msgid "Course opened"
 msgstr ""
 
-#: /views/lectures/add.ctp:12
-#: /views/lectures/edit.ctp:13
-msgid "very easy"
+#: /controllers/courses_controllerphp:155
+msgid "Error: Course not opened"
 msgstr ""
 
-#: /views/lectures/add.ctp:12
-#: /views/lectures/edit.ctp:13
-msgid "easy"
+#: /controllers/courses_controllerphp:166
+msgid "Proposals denied"
 msgstr ""
 
-#: /views/lectures/add.ctp:12
-#: /views/lectures/edit.ctp:13
-msgid "normal"
+#: /controllers/courses_controllerphp:168
+msgid "Error: Proposals not denied"
 msgstr ""
 
-#: /views/lectures/add.ctp:12
-#: /views/lectures/edit.ctp:13
-msgid "hard"
+#: /controllers/courses_controllerphp:179
+msgid "Proposals allowed"
 msgstr ""
 
-#: /views/lectures/add.ctp:12
-#: /views/lectures/edit.ctp:13
-msgid "very hard"
+#: /controllers/courses_controllerphp:181
+msgid "Error: Proposals not allowed"
 msgstr ""
 
-#: /views/lectures/view.ctp:27
-msgid "Edit this lecture"
+#: /controllers/courses_controllerphp:192
+msgid "Votes denied"
 msgstr ""
 
-#: /views/lectures/view.ctp:50
-msgid "Any comment?"
+#: /controllers/courses_controllerphp:194
+msgid "Error: Votes not denied"
 msgstr ""
 
-#: /views/lectures/view.ctp:56
-#: /views/votes/view.ctp:19
-msgid "Mark"
+#: /controllers/courses_controllerphp:205
+msgid "Votes allowed"
 msgstr ""
 
-#: /views/lectures/view.ctp:57
-msgid "negative"
+#: /controllers/courses_controllerphp:207
+msgid "Error: Votes not allowed"
 msgstr ""
 
-#: /views/lectures/view.ctp:57
-msgid "neutral"
+#: /controllers/courses_controllerphp:220
+msgid "Error: Invalid course"
 msgstr ""
 
-#: /views/lectures/view.ctp:57
-msgid "positive"
+#: /controllers/lectures_controllerphp:20
+msgid "Invalid Lecture."
 msgstr ""
 
-#: /views/lectures/view.ctp:58;64
-#: /views/votes/view.ctp:29
-msgid "Comments"
+#: /controllers/lectures_controllerphp:44;72
+msgid "The Lecture has been saved"
 msgstr ""
 
-#: /views/lectures/view.ctp:75
-msgid "Are you sure you want to delete this comment?"
+#: /controllers/lectures_controllerphp:47;75
+msgid "The Lecture could not be saved. Please, try again."
 msgstr ""
 
-#: /views/users/add.ctp:4
-msgid "Add User"
+#: /controllers/lectures_controllerphp:61
+#: /views/courses/viewctp:99
+msgid "New lecture"
 msgstr ""
 
-#: /views/users/add.ctp:16
-#: /views/users/edit.ctp:14
-#: /views/users/view.ctp:32
-msgid "List Users"
+#: /controllers/lectures_controllerphp:66
+msgid "Invalid Lecture"
 msgstr ""
 
-#: /views/users/edit.ctp:2
-msgid "Edit User"
+#: /controllers/lectures_controllerphp:94
+msgid "Invalid id for Lecture"
 msgstr ""
 
-#: /views/users/index.ctp:2
+#: /controllers/lectures_controllerphp:99
+msgid "Lecture deleted"
+msgstr ""
+
+#: /controllers/pupils_controllerphp:14
+msgid "Invalid Pupil."
+msgstr ""
+
+#: /controllers/pupils_controllerphp:24;41
+msgid "The Pupil has been saved"
+msgstr ""
+
+#: /controllers/pupils_controllerphp:27;44
+msgid "The Pupil could not be saved. Please, try again."
+msgstr ""
+
+#: /controllers/pupils_controllerphp:36
+msgid "Invalid Pupil"
+msgstr ""
+
+#: /controllers/pupils_controllerphp:56
+msgid "Invalid id for Pupil"
+msgstr ""
+
+#: /controllers/pupils_controllerphp:60
+msgid "Pupil deleted"
+msgstr ""
+
+#: /controllers/users_controllerphp:25;35;49;69
+#: /views/users/indexctp:2
 msgid "Users"
 msgstr ""
 
-#: /views/users/index.ctp:43
-#: /views/votes/index.ctp:51
-msgid "View"
+#: /controllers/users_controllerphp:30
+msgid "Invalid User."
 msgstr ""
 
-#: /views/users/index.ctp:45
-#: /views/votes/edit.ctp:19
-#: /views/votes/index.ctp:53
-#: /views/votes/view.ctp:44
-msgid "Are you sure you want to delete # %s?"
+#: /controllers/users_controllerphp:43;60
+msgid "The User has been saved"
 msgstr ""
 
-#: /views/users/index.ctp:58
-msgid "New User"
+#: /controllers/users_controllerphp:46;63
+msgid "The User could not be saved. Please, try again."
 msgstr ""
 
-#: /views/users/login.ctp:1
-msgid "Login"
+#: /controllers/users_controllerphp:50
+msgid "New user"
 msgstr ""
 
-#: /views/users/view.ctp:2
+#: /controllers/users_controllerphp:55
+msgid "Invalid User"
+msgstr ""
+
+#: /controllers/users_controllerphp:76
+msgid "Invalid id for User"
+msgstr ""
+
+#: /controllers/users_controllerphp:80
+msgid "User deleted"
+msgstr ""
+
+#: /controllers/votes_controllerphp:20
+msgid "The Vote has been saved"
+msgstr ""
+
+#: /controllers/votes_controllerphp:23
+msgid "The Vote could not be saved. Please, try again."
+msgstr ""
+
+#: /views/courses/addctp:8
+msgid "Add"
+msgstr ""
+
+#: /views/courses/calendarctp:4
+msgid "Here you have the courses calendar. If you put the pointer on a ttitle, you can see a tooltip with information, and if you click on, you will see the course page."
+msgstr ""
+
+#: /views/courses/calendarctp:10
+msgid "Here you can find the assistants calendar."
+msgstr ""
+
+#: /views/courses/calendarctp:15
+#: /views/lectures/addctp:23
+#: /views/lectures/editctp:24
+#: /views/lectures/viewctp:24
+msgid "Return to course"
+msgstr ""
+
+#: /views/courses/editctp:8
+msgid "Closed"
+msgstr ""
+
+#: /views/courses/editctp:10
+msgid "Proposals"
+msgstr ""
+
+#: /views/courses/editctp:12
+#: /views/votes/indexctp:2
+msgid "Votes"
+msgstr ""
+
+#: /views/courses/editctp:18
+msgid "Return to courses list"
+msgstr ""
+
+#: /views/courses/indexctp:7
+#: /views/courses/viewctp:21
+#: /views/users/indexctp:6
+#: /views/votes/indexctp:6
+msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
+msgstr ""
+
+#: /views/courses/indexctp:15
+msgid "Status"
+msgstr ""
+
+#: /views/courses/indexctp:17
+#: /views/courses/viewctp:34
+#: /views/users/indexctp:15
+#: /views/votes/indexctp:18
+msgid "Actions"
+msgstr ""
+
+#: /views/courses/indexctp:43
+msgid "Close"
+msgstr ""
+
+#: /views/courses/indexctp:48
+msgid "Allow proposals"
+msgstr ""
+
+#: /views/courses/indexctp:50
+msgid "Deny proposals"
+msgstr ""
+
+#: /views/courses/indexctp:54
+msgid "Allow votes"
+msgstr ""
+
+#: /views/courses/indexctp:56
+msgid "Deny votes"
+msgstr ""
+
+#: /views/courses/indexctp:59
+msgid "Open"
+msgstr ""
+
+#: /views/courses/indexctp:68
+#: /views/courses/viewctp:67
+#: /views/users/indexctp:48
+#: /views/votes/indexctp:60
+msgid "previous"
+msgstr ""
+
+#: /views/courses/indexctp:70
+#: /views/courses/viewctp:69
+#: /views/users/indexctp:50
+#: /views/votes/indexctp:62
+msgid "next"
+msgstr ""
+
+#: /views/courses/indexctp:74
+msgid "New Course"
+msgstr ""
+
+#: /views/courses/viewctp:5
+msgid "Lectures"
+msgstr ""
+
+#: /views/courses/viewctp:7
+msgid "These are the proposed speaks for this course. The most voted speaks will be done. If you are interested in any, you can vote it clicking in the speak title."
+msgstr ""
+
+#: /views/courses/viewctp:9
+msgid "These are the proposet speeks for this course. If you want to know more, click in the title of the speask."
+msgstr ""
+
+#: /views/courses/viewctp:12
+msgid "Maybe you are interested in see the "
+msgstr ""
+
+#: /views/courses/viewctp:13
+msgid "courses calendar."
+msgstr ""
+
+#: /views/courses/viewctp:16
+msgid "We are in the organization phase, the calendar could not be finished"
+msgstr ""
+
+#: /views/courses/viewctp:31
+msgid "comments"
+msgstr ""
+
+#: /views/courses/viewctp:32
+msgid "pupils"
+msgstr ""
+
+#: /views/courses/viewctp:59
+#: /views/lectures/viewctp:89
+#: /views/users/indexctp:41
+#: /views/votes/editctp:19
+#: /views/votes/indexctp:53
+msgid "Delete"
+msgstr ""
+
+#: /views/courses/viewctp:59
+msgid "Are you sure you want to delete %s?"
+msgstr ""
+
+#: /views/courses/viewctp:90
+msgid "Submit"
+msgstr ""
+
+#: /views/courses/viewctp:96
+msgid "Return to courses"
+msgstr ""
+
+#: /views/layouts/choomlactp:28
+#: /views/layouts/corporatebluectp:21
+#: /views/layouts/defaultctp:21
+#: /views/layouts/gulctp:24
+#: /views/users/viewctp:2
 msgid "User"
 msgstr ""
 
-#: /views/users/view.ctp:4
-#: /views/votes/view.ctp:4
-msgid "Id"
+#: /views/layouts/choomlactp:29
+#: /views/layouts/corporatebluectp:22
+#: /views/layouts/defaultctp:22
+#: /views/layouts/gulctp:25
+msgid "manage users"
 msgstr ""
 
-#: /views/users/view.ctp:9
-msgid "Username"
+#: /views/layouts/choomlactp:30
+#: /views/layouts/corporatebluectp:23
+#: /views/layouts/defaultctp:23
+msgid "logout"
 msgstr ""
 
-#: /views/users/view.ctp:14
-msgid "Password"
+#: /views/layouts/choomlactp:32
+#: /views/layouts/corporatebluectp:25
+#: /views/layouts/defaultctp:25
+msgid "login"
 msgstr ""
 
-#: /views/users/view.ctp:19
-msgid "Email"
+#: /views/lectures/addctp:11
+#: /views/lectures/editctp:12
+msgid "Level"
 msgstr ""
 
-#: /views/users/view.ctp:24
+#: /views/lectures/addctp:12
+#: /views/lectures/editctp:13
+msgid "very easy"
+msgstr ""
+
+#: /views/lectures/addctp:12
+#: /views/lectures/editctp:13
+msgid "easy"
+msgstr ""
+
+#: /views/lectures/addctp:12
+#: /views/lectures/editctp:13
+msgid "normal"
+msgstr ""
+
+#: /views/lectures/addctp:12
+#: /views/lectures/editctp:13
+msgid "hard"
+msgstr ""
+
+#: /views/lectures/addctp:12
+#: /views/lectures/editctp:13
+msgid "very hard"
+msgstr ""
+
+#: /views/lectures/viewctp:26
+msgid "Edit this lecture"
+msgstr ""
+
+#: /views/lectures/viewctp:60
+msgid "Any comment?"
+msgstr ""
+
+#: /views/lectures/viewctp:66
+#: /views/votes/viewctp:19
+msgid "Mark"
+msgstr ""
+
+#: /views/lectures/viewctp:67
+msgid "negative"
+msgstr ""
+
+#: /views/lectures/viewctp:67
+msgid "neutral"
+msgstr ""
+
+#: /views/lectures/viewctp:67
+msgid "positive"
+msgstr ""
+
+#: /views/lectures/viewctp:68;78
+#: /views/votes/viewctp:29
+msgid "Comments"
+msgstr ""
+
+#: /views/lectures/viewctp:89
+msgid "Are you sure you want to delete this comment?"
+msgstr ""
+
+#: /views/users/addctp:2
+#: /views/users/indexctp:53
+msgid "New User"
+msgstr ""
+
+#: /views/users/addctp:8
+#: /views/users/editctp:9
+#: /views/users/viewctp:14
 msgid "Accepted"
 msgstr ""
 
-#: /views/votes/add.ctp:4
+#: /views/users/addctp:14
+#: /views/users/editctp:15
+#: /views/users/viewctp:22
+msgid "List Users"
+msgstr ""
+
+#: /views/users/editctp:2
+msgid "Edit User"
+msgstr ""
+
+#: /views/users/indexctp:36
+#: /views/users/viewctp:16
+msgid "Yes"
+msgstr ""
+
+#: /views/users/indexctp:36
+#: /views/users/viewctp:16
+msgid "No"
+msgstr ""
+
+#: /views/users/indexctp:39
+#: /views/votes/indexctp:51
+msgid "View"
+msgstr ""
+
+#: /views/users/indexctp:41
+#: /views/votes/editctp:19
+#: /views/votes/indexctp:53
+#: /views/votes/viewctp:44
+msgid "Are you sure you want to delete # %s?"
+msgstr ""
+
+#: /views/users/loginctp:2
+msgid "Login"
+msgstr ""
+
+#: /views/users/viewctp:4
+#: /views/votes/viewctp:4
+msgid "Id"
+msgstr ""
+
+#: /views/users/viewctp:9
+msgid "Email"
+msgstr ""
+
+#: /views/votes/addctp:4
 msgid "Add Vote"
 msgstr ""
 
-#: /views/votes/add.ctp:18
-#: /views/votes/edit.ctp:20
-#: /views/votes/view.ctp:45
+#: /views/votes/addctp:18
+#: /views/votes/editctp:20
+#: /views/votes/viewctp:45
 msgid "List Votes"
 msgstr ""
 
-#: /views/votes/add.ctp:19
-#: /views/votes/edit.ctp:21
-#: /views/votes/index.ctp:67
-#: /views/votes/view.ctp:47
+#: /views/votes/addctp:19
+#: /views/votes/editctp:21
+#: /views/votes/indexctp:67
+#: /views/votes/viewctp:47
 msgid "List Lectures"
 msgstr ""
 
-#: /views/votes/add.ctp:20
-#: /views/votes/edit.ctp:22
-#: /views/votes/index.ctp:68
-#: /views/votes/view.ctp:48
+#: /views/votes/addctp:20
+#: /views/votes/editctp:22
+#: /views/votes/indexctp:68
+#: /views/votes/viewctp:48
 msgid "New Lecture"
 msgstr ""
 
-#: /views/votes/edit.ctp:4
-#: /views/votes/view.ctp:43
+#: /views/votes/editctp:4
+#: /views/votes/viewctp:43
 msgid "Edit Vote"
 msgstr ""
 
-#: /views/votes/index.ctp:66
-#: /views/votes/view.ctp:46
+#: /views/votes/indexctp:66
+#: /views/votes/viewctp:46
 msgid "New Vote"
 msgstr ""
 
-#: /views/votes/view.ctp:2
+#: /views/votes/viewctp:2
 msgid "Vote"
 msgstr ""
 
-#: /views/votes/view.ctp:9
+#: /views/votes/viewctp:9
 msgid "Lecture"
 msgstr ""
 
-#: /views/votes/view.ctp:14
+#: /views/votes/viewctp:14
 msgid "Datetime"
 msgstr ""
 
-#: /views/votes/view.ctp:24
+#: /views/votes/viewctp:24
 msgid "From"
 msgstr ""
 
-#: /views/votes/view.ctp:34
+#: /views/votes/viewctp:34
 msgid "Ip"
 msgstr ""
 
-#: /views/votes/view.ctp:44
+#: /views/votes/viewctp:44
 msgid "Delete Vote"
 msgstr ""
 
-#: /webroot/test.php:101
+#: /webroot/testphp:101
 msgid "Debug setting does not allow access to this url."
 msgstr ""
 
