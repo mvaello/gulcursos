@@ -50,7 +50,7 @@
 		<?php echo $form->create('Vote');?>
 		<?php echo $form->hidden('lecture',array('value'=>$lecture['Lecture']['id'])); ?>
         <?php if(!$myuser): ?>
-	    	<?php echo $form->input('captcha'); ?>
+				<?php $recaptcha->display_form('echo'); ?>
         <?php endif; ?>
 		<?php echo $form->end('Vote');?>
         </div>

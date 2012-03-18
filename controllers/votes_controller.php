@@ -3,11 +3,11 @@ class VotesController extends AppController {
 
 	var $name = 'Votes';
 	var $helpers = array('Html', 'Form');
-	var $components = array('Captcha');
+	var $components = array('Recaptcha');
 
 	function add() {
 		if (!empty($this->data)) {
-			if($this->myuser===null && !$this->Captcha->check($this->data['Vote']['captcha'])){
+			if($this->myuser===null && !$this->Recaptcha->valid($this->param['form'])){
 				$this->Session->setFlash(__('Invalid Captcha.', true));
 				$this->redirect(array('controller'=>'lectures','action'=>'view',$this->data['Vote']['lecture']));
             }else{
