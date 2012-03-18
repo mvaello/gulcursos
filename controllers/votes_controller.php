@@ -7,7 +7,7 @@ class VotesController extends AppController {
 
 	function add() {
 		if (!empty($this->data)) {
-			if($this->myuser===null && !$this->Recaptcha->valid($this->param['form'])){
+			if($this->myuser===null && !$this->Recaptcha->valid($this->params['form'])){
 				$this->Session->setFlash(__('Invalid Captcha.', true));
 				$this->redirect(array('controller'=>'lectures','action'=>'view',$this->data['Vote']['lecture']));
             }else{
