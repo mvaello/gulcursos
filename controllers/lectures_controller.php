@@ -9,7 +9,7 @@ class LecturesController extends AppController {
 	function beforeFilter() {
 		$this->Recaptcha->publickey = "6Lf8_s4SAAAAAKsqyOgtf_yYymMKD6MSCPaNOfto";
 		$this->Recaptcha->privatekey = "6Lf8_s4SAAAAAJ0NPNkzKKePs5tH34EvEvnKBqT_";
-	        $this->Auth->allow('view','add','captcha');
+		$this->Auth->allow('view','add','captcha');
 		parent::beforeFilter();
 	}
 
@@ -32,6 +32,7 @@ class LecturesController extends AppController {
 	}
 
 	function add($course_id=null) {
+		echo 'hola';
 		if (!empty($this->data)) {
 			if($this->myuser===null && !$this->Recaptcha->valid($this->params['form'])){
 				$this->log('Captcha incorrecto.');
