@@ -45,16 +45,18 @@ class LecturesController extends AppController {
 				$this->log('Grabando curso.');
 				$this->Lecture->create();
 				if ($this->Lecture->save($this->data)) {
+		echo 'add 5';
 					$this->Session->setFlash(__('The Lecture has been saved', true));
 					$this->redirect(array('action'=>'view',$this->Lecture->id));
 				} else {
+		echo 'add 6';
 					$this->Session->setFlash(__('The Lecture could not be saved. Please, try again.', true));
 				}
 			}
 		}
-        if(is_null($course_id)){
-            $course_id = $this->data['Lecture']['course'];
-        }
+		if(is_null($course_id)){
+			$course_id = $this->data['Lecture']['course'];
+		}
 		$this->set('course_id',$course_id);
 		$course = $this->Course->read(null,$course_id);
 		$courses = $this->Lecture->Course->find('list');
