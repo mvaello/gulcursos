@@ -6,8 +6,9 @@ class UsersController extends AppController {
 	var $components = array('Auth');
 
 	function beforeFilter() {
-	    $this->Auth->allow('login');
-        $this->Auth->loginRedirect=array('controller'=>'courses','action'=>'index');
+		$this->Auth->allow('login');
+		$this->Auth->loginRedirect=array('controller'=>'courses','action'=>'index');
+		$this->Session->write('Auth.redirect', '');
 		parent::beforeFilter();
 	}
 

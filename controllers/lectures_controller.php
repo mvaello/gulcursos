@@ -4,15 +4,13 @@ class LecturesController extends AppController {
 	var $name = 'Lectures';
 	var $helpers = array('Html', 'Form');
 	var $uses = array('Lecture','Course');
-	var $components = array('Captcha');
+	var $components = array('Recaptcha');
 
 	function beforeFilter() {
+		$this->Recaptcha->publickey = "6Lf8_s4SAAAAAKsqyOgtf_yYymMKD6MSCPaNOfto";
+		$this->Recaptcha->privatekey = "6Lf8_s4SAAAAAJ0NPNkzKKePs5tH34EvEvnKBqT_";
 	        $this->Auth->allow('view','add','captcha');
 		parent::beforeFilter();
-	}
-
-	function captcha(){
-		$this->Captcha->image();
 	}
 
 	function view($id = null) {
@@ -35,10 +33,12 @@ class LecturesController extends AppController {
 
 	function add($course_id=null) {
 		if (!empty($this->data)) {
-			if($this->myuser===null && !$this->Captcha->check($this->data['Lecture']['captcha'])){
+			if($this->myuser===null && !$this->Recaptcha->valid($this->params['form'])){
+				$this->log('Captcha incorrecto.');
 				$this->Session->setFlash(__('Invalid Captcha.', true));
 				$this->redirect(array('controller'=>'courses','action'=>'view',$this->data['Lecture']['course']));
 			}else{
+				$this->log('Grabando curso.');
 				$this->Lecture->create();
 				if ($this->Lecture->save($this->data)) {
 					$this->Session->setFlash(__('The Lecture has been saved', true));
