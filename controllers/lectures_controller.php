@@ -32,24 +32,18 @@ class LecturesController extends AppController {
 	}
 
 	function add($course_id=null) {
-		echo 'add 1';
 		if (!empty($this->data)) {
-		echo 'add 2';
 			if($this->myuser===null && !$this->Recaptcha->valid($this->params['form'])){
-		echo 'add 3';
 				$this->log('Captcha incorrecto.');
 				$this->Session->setFlash(__('Invalid Captcha.', true));
 				$this->redirect(array('controller'=>'courses','action'=>'view',$this->data['Lecture']['course']));
 			}else{
-		echo 'add 4';
 				$this->log('Grabando curso.');
 				$this->Lecture->create();
 				if ($this->Lecture->save($this->data)) {
-		echo 'add 5';
 					$this->Session->setFlash(__('The Lecture has been saved', true));
 					$this->redirect(array('action'=>'view',$this->Lecture->id));
 				} else {
-		echo 'add 6';
 					$this->Session->setFlash(__('The Lecture could not be saved. Please, try again.', true));
 				}
 			}
