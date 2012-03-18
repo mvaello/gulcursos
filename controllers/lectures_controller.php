@@ -36,12 +36,12 @@ class LecturesController extends AppController {
 		if (!empty($this->data)) {
 		echo 'add 2';
 			if($this->myuser===null && !$this->Recaptcha->valid($this->params['form'])){
-		echo 'add 1';
+		echo 'add 3';
 				$this->log('Captcha incorrecto.');
 				$this->Session->setFlash(__('Invalid Captcha.', true));
 				$this->redirect(array('controller'=>'courses','action'=>'view',$this->data['Lecture']['course']));
 			}else{
-		echo 'add 3';
+		echo 'add 4';
 				$this->log('Grabando curso.');
 				$this->Lecture->create();
 				if ($this->Lecture->save($this->data)) {
