@@ -31,7 +31,7 @@ class CoursesController extends AppController {
 	function beforeFilter() {
 		$this->Recaptcha->publickey = "6Lf8_s4SAAAAAKsqyOgtf_yYymMKD6MSCPaNOfto";
 		$this->Recaptcha->privatekey = "6Lf8_s4SAAAAAJ0NPNkzKKePs5tH34EvEvnKBqT_";
-	        $this->Auth->allow('index','view','calendar','captcha','ics');
+		$this->Auth->allow('index','view','calendar','captcha','ics');
 		parent::beforeFilter();
 	}
 
@@ -72,8 +72,8 @@ class CoursesController extends AppController {
 
 	function add() {
 		if (!empty($this->data)) {
-			if ($this->Recaptcha->valid($this->params['form'])) {
-				$this->log('El captcha es valido');
+	//		if ($this->Recaptcha->valid($this->params['form'])) {
+	//			$this->log('El captcha es valido');
 				$this->Course->create();
 				if ($this->Course->save($this->data)) {
 					$this->Session->setFlash(__('The Course has been saved', true));
@@ -81,11 +81,11 @@ class CoursesController extends AppController {
 				} else {
 					$this->Session->setFlash(__('The Course could not be saved. Please, try again.', true));
 				}
-			}
-			else {
-				$this->log('Captcha incorrecto');
-				$this->Session->setFlash(__('Invalid captcha. Please, try again.', true));
-			}
+	//		}
+	//		else {
+	//			$this->log('Captcha incorrecto');
+	//			$this->Session->setFlash(__('Invalid captcha. Please, try again.', true));
+	//		}
 		}
 		else {
 			$this->log('No se han mandado datos');
