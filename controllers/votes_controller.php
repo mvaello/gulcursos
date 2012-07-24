@@ -7,7 +7,7 @@ class VotesController extends AppController {
 	
 	function beforeFilter() {
 		$this->Recaptcha->publickey = "6Lf8_s4SAAAAAKsqyOgtf_yYymMKD6MSCPaNOfto";
-		$this->Recaptcha->privatekey = "6Lf8_s4SAAAAAJ0NPNkzKKePs5tH34EvEvnKBqT_";
+		$this->Recaptcha->privatekey = "****************************************";
 		parent::beforeFilter();
 	}
 
